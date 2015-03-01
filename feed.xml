@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://burnaftercoding.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://burnaftercoding.github.io" />
-<updated>2015-03-01T18:23:02+01:00</updated>
+<updated>2015-03-01T19:32:32+01:00</updated>
 <id>http://burnaftercoding.github.io/</id>
 <author>
   <name>Anthyme Caillard</name>
@@ -1040,7 +1040,7 @@ Maybe the iteration can be better but I am not a specialist of iterate JavaScrip
 
 &lt;p&gt;A video should be better but at least a screenshot can show you the user experience.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!3585&amp;amp;authkey=!AK-YXGL6Yqo2zDE&amp;amp;v=3&amp;amp;ithint=photo%2cpng&quot; alt=&quot;Canvas draw something&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/draw-something-with-html5/CanvasDraw.png&quot; alt=&quot;Canvas draw something&quot;&gt;&lt;/p&gt;
 
 &lt;h2&gt;Final words&lt;/h2&gt;
 
@@ -1055,7 +1055,7 @@ Create with &amp;quot;captured points&amp;quot; a list of &amp;quot;displayed po
 With some nice algorithms (correctly timed) you can transform the points captured to Bezier curves lighter and smoother than the paint approach of the drawing.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!3584&amp;amp;authkey=!ADRkhVVp_U3EnWo&amp;amp;ithint=file%2c7z&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://github.com/anthyme/CanvasDraw&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.github.io/post/draw-something-with-html5/&quot;&gt;Draw something with html5&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.github.io&quot;&gt;Burn after coding&lt;/a&gt; on June 13, 2012.&lt;/p&gt;</content>
 </entry>
@@ -1598,7 +1598,7 @@ The GetUpdates has the particularity to be started once with the StartGetUpdate 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;The result&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!431&amp;amp;authkey=!AGgws62sMAzZO7A&amp;amp;v=3&amp;amp;ithint=photo%2cpng&quot; alt=&quot;Long polling chat&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/real-time-web-development-with-long-polling/LongPooling.png&quot; alt=&quot;Long polling chat&quot;&gt;&lt;/p&gt;
 
 &lt;h2&gt;Final words&lt;/h2&gt;
 
@@ -1616,7 +1616,7 @@ It&amp;#39;s not totally stable, nor integrated in the WCF stack (too bad) and y
 I will probably create an article with SignalR if it&amp;#39;s useful (there are already articles on SignalR uses).&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!432&amp;amp;authkey=!AJi5prVy_w0qVnI&amp;amp;ithint=file%2c7z&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://github.com/anthyme/LongPollingChat&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/&quot;&gt;Real time web development with long polling&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.github.io&quot;&gt;Burn after coding&lt;/a&gt; on June 07, 2012.&lt;/p&gt;</content>
 </entry>
@@ -2490,7 +2490,7 @@ Indeed it should be use only on many-to-one relations (that avoid this type of j
 &lt;p&gt;Wow, what&amp;#39;s a huge code ! That seem&amp;#39;s ugly ! Yeah that&amp;#39;s a lot of code for loading an object.
 But now let see the results in a benchmark with one and multiples subjects:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!416&amp;amp;authkey=!AHCCYnLmP6gye1M&amp;amp;v=3&amp;amp;ithint=photo%2cpng&quot; alt=&quot;Benchmark&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/objects-graph-loading-in-entity-framework/graphloading.png&quot; alt=&quot;Benchmark&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;In this case we have an improvement in performance from 8 to 15 times relativily to the include pattern!&lt;/p&gt;
 
@@ -2504,7 +2504,7 @@ But now let see the results in a benchmark with one and multiples subjects:&lt;/
 
 &lt;p&gt;Indeed, in this kind of scenario the most efficient way to load data is a multi result set stored procedure.&lt;/p&gt;
 
-&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!413&amp;amp;authkey=!AH0ZyqVQagoTo3w&amp;amp;ithint=file%2c7z&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://github.com/anthyme/EfGraphLoading&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you try and you have any observations do not hesitate to comment. ;-)&lt;/p&gt;
 
@@ -2686,11 +2686,11 @@ The validation is locked and launch on each RaisePropertyChanged().&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can have this kind of render:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!429&amp;amp;authkey=!AE3F9QX53uJNr8I&amp;amp;v=3&amp;amp;ithint=photo%2cpng&quot; alt=&quot;Async validation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/asynchronous-validation-with-wpf-4-5/AsyncValidation.png&quot; alt=&quot;Async validation&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also imagine to launch the validate only when the save button is clicked or use a Reactive Extensions (RX) query with the Throttle method to limit the time between two validation (for exemple validate max once per sencond).&lt;/p&gt;
 
-&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://onedrive.live.com/download?resid=EEE66E4387AB62A!424&amp;amp;authkey=!ACKziu7H8tQLhfg&amp;amp;ithint=file%2c7z&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the source code associated to this article &lt;a href=&quot;https://github.com/anthyme/AsyncValidation&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.github.io/post/asynchronous-validation-with-wpf-4-5/&quot;&gt;Asynchronous Validation with WPF 4.5&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.github.io&quot;&gt;Burn after coding&lt;/a&gt; on March 01, 2012.&lt;/p&gt;</content>
 </entry>
