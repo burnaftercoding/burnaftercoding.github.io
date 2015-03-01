@@ -1,0 +1,435 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Dotnet to JavaScript part 1 namespaces &#8211; Burn after coding</title>
+<meta name="description" content="Burn after coding">
+<meta name="keywords" content="JavaScript">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://burnaftercoding.github.io/images/abstract-11.jpg">
+
+<meta name="twitter:title" content="Dotnet to JavaScript part 1 namespaces">
+<meta name="twitter:description" content="Burn after coding">
+<meta name="twitter:creator" content="@anthyme">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dotnet to JavaScript part 1 namespaces">
+<meta property="og:description" content="Burn after coding">
+<meta property="og:url" content="http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/">
+<meta property="og:site_name" content="Burn after coding">
+
+
+
+
+
+<link rel="canonical" href="http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/">
+<link href="http://burnaftercoding.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Burn after coding Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://burnaftercoding.github.io/assets/css/main.css">
+<!-- Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://burnaftercoding.github.io/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://burnaftercoding.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://burnaftercoding.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://burnaftercoding.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://burnaftercoding.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://burnaftercoding.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://burnaftercoding.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" class="feature">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://burnaftercoding.github.io">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li>
+					<img src="http://burnaftercoding.github.io/images/avatar.jpg" alt="Anthyme Caillard photo" class="author-photo">
+					<h4>Anthyme Caillard</h4>
+					<p>Software craftsman Dotnet addict &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Agile fan</p>
+				</li>
+				<li><a href="http://burnaftercoding.github.io/about/">Learn More</a></li>
+				
+				<li>
+					<a href="http://twitter.com/anthyme"><i class="fa fa-twitter"></i> Twitter</a>
+				</li>
+				
+				
+				
+				<li>
+					<a href="http://github.com/anthyme"><i class="fa fa-github"></i> GitHub</a>
+				</li>
+				
+				
+				
+				
+			</ul><!-- /.dl-submenu -->
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="http://burnaftercoding.github.io/posts/">All Posts</a></li>
+				<li><a href="http://burnaftercoding.github.io/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+<div class="entry-header">
+  
+  <div class="entry-image">
+    <img src="http://burnaftercoding.github.io/images/abstract-11.jpg" alt="Dotnet to JavaScript part 1 namespaces">
+  </div><!-- /.entry-image -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/" rel="bookmark" title="Dotnet to JavaScript part 1 namespaces">Dotnet to JavaScript part 1 namespaces</a></h1>
+        
+        <h2>May 23, 2012</h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          Reading time ~9 minutes
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>The part 1 of an articles series on JavaScript good practices, this one talk about how retrieve your lovely C# namespaces in the JavaScript world.</p>
+
+<h2>Introduction</h2>
+
+<h3>Personal background on JavaScript</h3>
+
+<p>The first time I see JavaScript 10 years ago, I felt that it was some kind of gadget... When I first used it in real world application 5 years ago and during a few years, I had really bad headaches. Debugging was crazy, some JavaScript on header of the page, on files, everywhere in the content of page and the differences between browser was terrible. I thought this language simply can’t create well developed applications.</p>
+
+<p>For me this language couldn&#39;t exist like this longer and it was obvious that JavaScript (with no changes since 1999!) will disappear soon, thanks to the beautiful WPF/Silverlight and Flash/Flex. I made the choice to avoid this language in most cases, wait and learn the &quot;new wave&quot; of RIA development.</p>
+
+<p>But as we can see today, the plug-in approach is dying slowly but surely and it is no more a good idea for internet website, thank to Apple that don&#39;t allow plug-in on the iphone/ipad browser for the best and the worst.</p>
+
+<p>Yes Silverlight is a wonderful technology, the one every DotNet developers wait for and want be the best and only one technology to create RIA with DotNet on all platforms. We all want Silverlight to - fully - succeed, but the developers don&#39;t make the technologies succeed, business do.</p>
+
+<p>JavaScript is now evolving quickly with the html5 standard massively developed and supported by all the biggest software company (Microsoft, Apple, Google and others) and I think every DotNet developer should have a look to these technologies, probably the best future technologies for web development but may be for full portable application development too.</p>
+
+<p>So let&#39;s take a look.</p>
+
+<h3>What about JavaScript ?</h3>
+
+<p>JavaScript was created quickly (who say &quot;draft&quot; ?) and integrated in the browser at the beginning of internet. This &quot;revolution&quot; introduced by the JavaScript language was to enable interactivity instead of static web pages and create some years later the &quot;Web 2.0&quot;. </p>
+
+<p>Now let&#39;s go from heaven to the hell... What is the worse from JavaScript ? After a quick look we can see this:</p>
+
+<ul>
+<li>No namespaces</li>
+<li>Functional programming and no class: everything is a function or a variable.</li>
+<li>Strangely &quot;typed&quot;</li>
+<li>Strange &quot;this&quot;</li>
+<li>Support in the different browsers</li>
+<li>Some curious &quot;functionalities&quot;</li>
+</ul>
+
+<p>In fact JavaScript is now the only language that can be used everywhere on web your application:</p>
+
+<ul>
+<li>In your browser of course and it&#39;s the only plug-in less solution</li>
+<li>In your database with nosql database like MongoDB or CouchDB</li>
+<li>In your web server like Node.js and Vert.x</li>
+<li>In touch applications (Windows 8, ipad/iphone)</li>
+<li>But also on various platforms like TV, OS (WebOS, JoliCloud, ...) or multiple smartphone with PhoneGap</li>
+</ul>
+
+<p>JavaScript has its drawbacks but it is not so horrible, it&#39;s just &quot;different&quot; and has a really big flexibility that allow cool things as really bad things.</p>
+
+<h3>No namespace ? Really ?</h3>
+
+<p>One of the biggest problem of the missing of namespace is that when you declare a function it&#39;s global and everyone can use it and erase it, even not intentionally, just by choosing the same name.</p>
+
+<p>Not a problem on a little website with 10 function but in really complex code with hundreds of functions it can be horrible to develop and maintain. This is one of the biggest reason why people hate JavaScript.</p>
+
+<p>Don&#39;t worry you can, with good practices like the &quot;module pattern&quot;, organize your code with &quot;namespaces&quot;. </p>
+
+<h2>The Module Pattern</h2>
+
+<p>Let&#39;s see how to create the &quot;Company.Project.ModuleA&quot; namespace step by step.</p>
+
+<h3>Isolated code</h3>
+
+<p>The first really important thing is to isolate each functionality.</p>
+
+<p>To do this we can create a scope with &quot;(&quot; scope &quot;)&quot; that encapsulate an anonymous function.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//Your private code written</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>Like this all things you create in this function is isolated and inaccessible from outside of this block.
+It seems good but the problem is that this code is defined but not executed so let&#39;s simply call it with a &quot;()&quot;.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//Your private code defined (executed)</span>
+<span class="p">})()</span>
+</code></pre></div>
+<h3>Root namespace</h3>
+
+<p>Now we need to provide functionality accessible from outside, to achieve this you have to add your functionalities to the &quot;root&quot; of JavaScript namespace. The root namespace is &quot;window&quot; in the browser. Let&#39;s add a function:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">testFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//Your function code</span>
+    <span class="p">};</span>
+<span class="p">})()</span>
+<span class="c1">//You can call your function outside</span>
+<span class="nx">testFunction</span><span class="p">();</span>
+</code></pre></div>
+<p>There is a problem in this code for framework/toolkit use: window is the root namespace in the browser but not on windows 8, node.js or others.</p>
+
+<p>To fix that, you have to choose a conventional name like &quot;global&quot; and use it on all your module&#39;s scopes like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">testFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//Your function code</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span> <span class="c1">//this contains the root namespace</span>
+</code></pre></div>
+<p>Like this you can customize the root element that construct your scope.</p>
+
+<h3>The magic trick</h3>
+
+<p>Now the bases of the module pattern, the namespace creation:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//This line get an existing namespace or create a new (with an empty object)</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">MyNamespace</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">MyNamespace</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="c1">//Now you can add functions to your namespace</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">testFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//Your function code</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+<span class="c1">//You can call your function outside from your namespace</span>
+<span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">testFunction</span><span class="p">();</span>
+</code></pre></div>
+<p>It seems special, the result is that you don&#39;t erase a potentially existing namespace (created in another JavaScrip file). 
+If you want to create a multiple depth namespace, you can proceed like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Anthyme</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span><span class="p">.</span><span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span><span class="p">.</span><span class="nx">ModuleA</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span><span class="p">.</span><span class="nx">ModuleA</span><span class="p">;</span>
+    <span class="c1">//Now you can add functions to your namespace</span>
+    <span class="nx">ModuleA</span><span class="p">.</span><span class="nx">testFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//Your function code</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+<span class="c1">//Shortcut to your module (like an "using")</span>
+<span class="kd">var</span> <span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span><span class="p">.</span><span class="nx">ModuleA</span><span class="p">;</span>
+<span class="c1">//You can call your function outside from your namespace</span>
+<span class="nx">ModuleA</span><span class="p">.</span><span class="nx">testFunction</span><span class="p">();</span>
+</code></pre></div>
+<p>Oh it is too verbose ! Yes a little, you can improve it a little like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Company</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Company</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">Project</span> <span class="o">=</span> <span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span> <span class="o">=</span> <span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">Project</span><span class="p">.</span><span class="nx">ChatService</span> <span class="o">=</span> <span class="nx">ModuleA</span><span class="p">.</span><span class="nx">ChatService</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="c1">//Now you can add functions to your namespace</span>
+    <span class="nx">ModuleA</span><span class="p">.</span><span class="nx">testFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//Your function code</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+</code></pre></div>
+<p>The module pattern end here. There is a lot of different ways to implement and improve it.</p>
+
+<h2>Go Further</h2>
+
+<h3>Improve namespace creation</h3>
+
+<p>Here is an example of code written in 5 minutes that can create your namespace in one line:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">namespace</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">namespace</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">namespaces</span> <span class="o">=</span> <span class="nx">namespace</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">global</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">namespaces</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">current</span><span class="p">[</span><span class="nx">namespaces</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">current</span><span class="p">[</span><span class="nx">namespaces</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">||</span> <span class="p">{};</span>
+            <span class="nx">current</span> <span class="o">=</span> <span class="nx">current</span><span class="p">[</span><span class="nx">namespaces</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">current</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+</code></pre></div>
+<p>Now you can create your namespace like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//Create the namespace</span>
+    <span class="kd">var</span> <span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">namespace</span><span class="p">(</span><span class="s2">"Company.Project.ModuleA"</span><span class="p">);</span>
+    <span class="c1">//Now you can add functions to your namespace</span>
+    <span class="nx">ModuleA</span><span class="p">.</span><span class="nx">testFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//Your function code</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+<span class="c1">//Shortcut to your module (like an "using")</span>
+<span class="kd">var</span> <span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">Company</span><span class="p">.</span><span class="nx">Project</span><span class="p">.</span><span class="nx">ModuleA</span><span class="p">;</span>
+<span class="c1">//You can call your function outside from your namespace</span>
+<span class="nx">ModuleA</span><span class="p">.</span><span class="nx">testFunction</span><span class="p">();</span>
+</code></pre></div>
+<h3>References and dependencies</h3>
+
+<p>The last problem is if you don&#39;t reference a library in your page and use it in another library you will raise an error.</p>
+
+<p>You can start creating an API to &quot;import&quot; your namespaces with a &quot;require&quot; function like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">require</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">namespace</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">namespaces</span> <span class="o">=</span> <span class="nx">namespace</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">global</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">namespaces</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">current</span> <span class="o">=</span> <span class="nx">current</span><span class="p">[</span><span class="nx">namespaces</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">current</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="s2">"Error: namespace "</span> <span class="o">+</span> <span class="nx">namespace</span> <span class="o">+</span> <span class="s2">" not loaded"</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">current</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+</code></pre></div>
+<p>And use it this way:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ModuleA</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"Company.Project.ModuleA"</span><span class="p">);</span>
+    <span class="nx">ModuleA</span><span class="p">.</span><span class="nx">testFunction</span><span class="p">();</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+</code></pre></div>
+<p>Now you have a real error for debug when modules aren&#39;t loaded.
+Instead of raising an error You can add loading strategy of your JavaScript files with conventions like using directories &quot;/Scripts/Company/Project/ModuleA.js&quot; or named files &quot;/Scripts/Company.Project.ModuleA.js&quot;</p>
+
+<p>It&#39;s up to you, some framework use this kind of techniques like <a href="http://dojotoolkit.org/">Dojo</a> for example. It&#39;s out of the scope of this article.</p>
+
+<h2>Final words</h2>
+
+<p>I hope you enjoy a little more JavaScript now, especially if you are a DotNet developer.
+In a future article I will speak about other patterns and OOP in JavaScript.</p>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://burnaftercoding.github.io/tags/#JavaScript" title="Pages tagged JavaScript" class="tag">JavaScript</a></span>
+        <span><a href="http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/" rel="bookmark" title="Dotnet to JavaScript part 1 namespaces">Dotnet to JavaScript part 1 namespaces</a> was published on <span class="entry-date date published updated"><time datetime="2012-05-23T00:18:44+02:00">May 23, 2012</time></span></span>
+        
+        <span class="author vcard"><span class="fn"><a href="http://burnaftercoding.github.io/about/" title="About Anthyme Caillard">Anthyme Caillard</a></span></span>
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+  
+    <div class="read-more-header">
+      <a href="http://burnaftercoding.github.io/post/simplified-connection-string-with-entity-framework-edmx-files/" class="read-more-btn">Read More</a>
+    </div><!-- /.read-more-header -->
+    <div class="read-more-content">
+      <h3><a href="http://burnaftercoding.github.io/post/software-architect-2014/" title="Software Architect 2014">Software Architect 2014</a></h3>
+      <p>#Software Architect 2014Cette article est un retour sur la conférence Software Architect 2014 @SoftArchConf. Cette conférence s'est dérou...&hellip; <a href="http://burnaftercoding.github.io/post/software-architect-2014/">Continue reading</a></p>
+    </div><!-- /.read-more-content -->
+  
+  <div class="read-more-list">
+    
+      <div class="list-item">
+        <h4><a href="http://burnaftercoding.github.io/post/smart-busy-indicator/" title="Smart busy indicator">Smart busy indicator</a></h4>
+        <span>Published on November 16, 2014</span>
+      </div><!-- /.list-item -->
+    
+      <div class="list-item">
+        <h4><a href="http://burnaftercoding.github.io/post/draw-something-with-html5/" title="Draw something with html5">Draw something with html5</a></h4>
+        <span>Published on June 13, 2012</span>
+      </div><!-- /.list-item -->
+    
+  </div><!-- /.read-more-list -->
+</div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2015 Anthyme Caillard. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://burnaftercoding.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://burnaftercoding.github.io/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56800873-1', 'auto');  
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+
+
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'burnaftercoding'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
+
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Real time web development with long polling &#8211; Burn after coding</title>
+<meta name="description" content="Burn after coding">
+<meta name="keywords" content="WCF">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://burnaftercoding.github.io/images/abstract-11.jpg">
+
+<meta name="twitter:title" content="Real time web development with long polling">
+<meta name="twitter:description" content="Burn after coding">
+<meta name="twitter:creator" content="@anthyme">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Real time web development with long polling">
+<meta property="og:description" content="Burn after coding">
+<meta property="og:url" content="http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/">
+<meta property="og:site_name" content="Burn after coding">
+
+
+
+
+
+<link rel="canonical" href="http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/">
+<link href="http://burnaftercoding.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Burn after coding Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://burnaftercoding.github.io/assets/css/main.css">
+<!-- Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://burnaftercoding.github.io/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://burnaftercoding.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://burnaftercoding.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://burnaftercoding.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://burnaftercoding.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://burnaftercoding.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://burnaftercoding.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" class="feature">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://burnaftercoding.github.io">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li>
+					<img src="http://burnaftercoding.github.io/images/avatar.jpg" alt="Anthyme Caillard photo" class="author-photo">
+					<h4>Anthyme Caillard</h4>
+					<p>Software craftsman Dotnet addict &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Agile fan</p>
+				</li>
+				<li><a href="http://burnaftercoding.github.io/about/">Learn More</a></li>
+				
+				<li>
+					<a href="http://twitter.com/anthyme"><i class="fa fa-twitter"></i> Twitter</a>
+				</li>
+				
+				
+				
+				<li>
+					<a href="http://github.com/anthyme"><i class="fa fa-github"></i> GitHub</a>
+				</li>
+				
+				
+				
+				
+			</ul><!-- /.dl-submenu -->
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="http://burnaftercoding.github.io/posts/">All Posts</a></li>
+				<li><a href="http://burnaftercoding.github.io/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+<div class="entry-header">
+  
+  <div class="entry-image">
+    <img src="http://burnaftercoding.github.io/images/abstract-11.jpg" alt="Real time web development with long polling">
+  </div><!-- /.entry-image -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/" rel="bookmark" title="Real time web development with long polling">Real time web development with long polling</a></h1>
+        
+        <h2>June 07, 2012</h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          Reading time ~19 minutes
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>This article presents the long polling pattern and shows a way to implement it with a Web real-time chat.</p>
+
+<h2>Introduction</h2>
+
+<h3>The purpose of real time programming</h3>
+
+<p>Imagine you have distant users and you want that these users see the same state of a view and interact with it in real time (a chat, a dashboard, whatever you want), how can you do it ?</p>
+
+<p>There is a development model named <a href="http://en.wikipedia.org/wiki/Comet_(programming)">Comet programming</a> that allowing these kinds of functionalities and I will show you one of its patterns: the long polling.</p>
+
+<h3>The timed polling technique</h3>
+
+<p>Inexperienced developers may use a timer on the client that refresh the view by polling the data every second (or 500 ms or less), it seems to be good but it&#39;s not really efficient.
+If you have 100 users you have 100 (200 or more) calls per second even if there is no new data to load.
+You can increase the time between 2 calls but your will lose responsiveness, even 1 second to have your screen refreshed can seem too slow in a lot of situations where you want or need real time responses.</p>
+
+<h3>The pushing technique</h3>
+
+<p>The solution is to <strong>&quot;push&quot;</strong> some information from your server to your client. Push can be used to send data or &quot;events&quot; to the client.
+When needed (and only when needed) the server sends information to the client directly, each call is useful and the latency is near 0 (depending on workload and bandwidth).
+Push is natively possible with WCF DualHttpBinding and NetTcpBinding but there are some limitations:</p>
+
+<ul>
+<li>You need to open port dedicated to this communication (NetTcpBinding)</li>
+<li>Some networks (firewalls) don&#39;t allow connection from server to the client (even with the Http protocol)</li>
+<li>You can&#39;t (currently) push data to a browser so it can&#39;t be used for web development</li>
+</ul>
+
+<h3>The long polling technique</h3>
+
+<p>One solution (among others) is to use the long polling technique that &quot;simulate&quot; Push.
+The long polling is in fact a solution near timed polls but give an &quot;experience&quot; like push let see how it proceed:</p>
+
+<ol>
+<li>The user launch the application or go to the website
+
+<ul>
+<li>Load (or return) your view with initialized data</li>
+</ul></li>
+<li>On the client side
+
+<ul>
+<li>Call the server if there are modifications since a timestamp</li>
+</ul></li>
+<li>on the server side
+
+<ul>
+<li>If they are modifications, return it immediately</li>
+<li>Else block the client call and register for modifications with a timeout (for example 30s)</li>
+<li>On modification event, return the new data</li>
+<li>If the timeout is finish return an empty modifications list</li>
+</ul></li>
+<li>On the client side with the return of the call
+
+<ul>
+<li>If they are modification apply them to the view and update your timestamp</li>
+<li>Finnaly recall the server if there are modifications (step 1)</li>
+</ul></li>
+</ol>
+
+<p>This approach permit two things:
+- When there are modifications on the server they instantaneously return to your client (like a push).
+- You have a maximum of &quot;useless&quot; calls of n users / t timeout (with 100 users and 30s timeout = 3.3 call/s instead of 100 or 200 for 1 s / 500 ms timed polling)</p>
+
+<p>There is one drawback versus real push: your request is blocked on the server side, so one thread is blocked for each user. You have to think about your number of users and threads that your webserver can allow.</p>
+
+<p>Now let&#39;s code an example of long polling screen, a simple multi user web chat.</p>
+
+<h2>The model</h2>
+
+<p>First, we create our model&#39;s classes:</p>
+
+<ul>
+<li>User: represent a connected user on the chat.</li>
+<li>Message: A message sent by a user on the chat.</li>
+<li>SessionKey: A way to identify the user that sends data.</li>
+</ul>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Message</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">User</span> <span class="n">User</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">Date</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Text</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SessionKey</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">Guid</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">User</span> <span class="n">User</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2>The Webservice</h2>
+
+<p>Let&#39;s think about our web service, we need 3 things:</p>
+
+<ul>
+<li>CreateSession: Initialize the chat session for a user and give him a SessionKey</li>
+<li>GetUpdates: Our long polling method, return new messages of the chat since a timestamp (Ticks)</li>
+<li>SendMessage: Send a message on the chat</li>
+</ul>
+
+<h3>Contracts</h3>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="na">[ServiceContract]</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IChatService</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">,</span> <span class="nf">WebInvoke</span><span class="p">(</span><span class="n">ResponseFormat</span> <span class="p">=</span> <span class="n">WebMessageFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">,</span>
+        <span class="n">RequestFormat</span> <span class="p">=</span> <span class="n">WebMessageFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">,</span> <span class="n">BodyStyle</span> <span class="p">=</span> <span class="n">WebMessageBodyStyle</span><span class="p">.</span><span class="n">Wrapped</span><span class="p">)]</span>
+    <span class="n">CreateSessionResult</span> <span class="nf">CreateSession</span><span class="p">(</span><span class="n">CreateSessionParameter</span> <span class="n">parameter</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">,</span> <span class="nf">WebInvoke</span><span class="p">(</span><span class="n">ResponseFormat</span> <span class="p">=</span> <span class="n">WebMessageFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">,</span>
+        <span class="n">RequestFormat</span> <span class="p">=</span> <span class="n">WebMessageFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">,</span> <span class="n">BodyStyle</span> <span class="p">=</span> <span class="n">WebMessageBodyStyle</span><span class="p">.</span><span class="n">Wrapped</span><span class="p">)]</span>
+    <span class="n">GetUpdatesResult</span> <span class="nf">GetUpdates</span><span class="p">(</span><span class="n">GetUpdatesParameter</span> <span class="n">parameter</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">,</span> <span class="nf">WebInvoke</span><span class="p">(</span><span class="n">ResponseFormat</span> <span class="p">=</span> <span class="n">WebMessageFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">,</span>
+        <span class="n">RequestFormat</span> <span class="p">=</span> <span class="n">WebMessageFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">,</span> <span class="n">BodyStyle</span> <span class="p">=</span> <span class="n">WebMessageBodyStyle</span><span class="p">.</span><span class="n">Wrapped</span><span class="p">)]</span>
+    <span class="n">SendMessageResult</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">SendMessageParameter</span> <span class="n">parameter</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">ParameterBase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">SessionKey</span> <span class="n">SessionKey</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">GetUpdatesParameter</span> <span class="p">:</span> <span class="n">ParameterBase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">long</span> <span class="n">Ticks</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">GetUpdatesResult</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">long</span> <span class="n">Ticks</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">ICollection</span> <span class="n">Messages</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SendMessageParameter</span> <span class="p">:</span> <span class="n">ParameterBase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Message</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SendMessageResult</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">CreateSessionParameter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">CreateSessionResult</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">SessionKey</span> <span class="n">Key</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>As you can see I use the WebInvoke attribute to create a REST service that return JSON.</p>
+
+<h3>Notifications</h3>
+
+<p>Now I will create a base Notification class that represent a event dedicated to a user at a specific date.
+The MessageNotification class represents a new message in the chat. You can also imagine a UserJoinNotification, to show when a user join the chat.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">Notification</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">Date</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">MessageNotification</span> <span class="p">:</span> <span class="n">Notification</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">Message</span> <span class="n">Message</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>User sessions</h3>
+
+<p>Then I create a representation of the session of a user with a UserSession class.</p>
+
+<p>This session contains:</p>
+
+<ul>
+<li>A SessionKey to do a correlation between request and user</li>
+<li>A collection of notifications associated to the user</li>
+<li>An event that raise changes in the session (new notifications)</li>
+<li>Methods to Add/Get/Check notifications</li>
+</ul>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">UserSession</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">UserSession</span><span class="p">(</span><span class="n">SessionKey</span> <span class="n">key</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Key</span> <span class="p">=</span> <span class="n">key</span><span class="p">;</span>
+        <span class="n">Notifications</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BlockingCollection</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">LastActivityDate</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">SessionKey</span> <span class="n">Key</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="n">BlockingCollection</span> <span class="n">Notifications</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">event</span> <span class="n">EventHandler</span> <span class="n">HasChanged</span><span class="p">;</span>
+
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">NotifyChanges</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">EventHandler</span> <span class="n">handler</span> <span class="p">=</span> <span class="n">HasChanged</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">handler</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="nf">handler</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="kt">object</span> <span class="n">notifyAddLock</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">object</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Notify</span><span class="p">(</span><span class="n">Notification</span> <span class="n">notification</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">lock</span> <span class="p">(</span><span class="n">notifyAddLock</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">notification</span><span class="p">.</span><span class="n">Date</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
+            <span class="n">Notifications</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nf">NotifyChanges</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">ICollection</span> <span class="nf">GetUpdates</span><span class="p">(</span><span class="kt">long</span> <span class="n">ticks</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Notifications</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">n</span> <span class="p">=&gt;</span> <span class="n">n</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="nf">ToClientTicks</span><span class="p">()</span> <span class="p">&gt;</span> <span class="n">ticks</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">HasChanges</span><span class="p">(</span><span class="kt">long</span> <span class="n">ticks</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Notifications</span><span class="p">.</span><span class="nf">Any</span><span class="p">(</span><span class="n">n</span> <span class="p">=&gt;</span> <span class="n">n</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="nf">ToClientTicks</span><span class="p">()</span> <span class="p">&gt;</span> <span class="n">ticks</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Chat engine</h3>
+
+<p>Now I create a ChatEngine class that represents the chat session.
+It is a singleton class and contains the user sessions.
+You can send message on this object with the SendMessage method, it simply creates new message notifications on the user sessions.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">ChatEngine</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nf">ChatEngine</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Sessions</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ConcurrentDictionary</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">static</span> <span class="n">ChatEngine</span> <span class="n">_current</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">ChatEngine</span> <span class="n">Current</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_current</span> <span class="p">??</span> <span class="p">(</span><span class="n">_current</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ChatEngine</span><span class="p">());</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">event</span> <span class="n">EventHandler</span> <span class="n">Changed</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">OnChanged</span><span class="p">(</span><span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">EventHandler</span> <span class="n">handler</span> <span class="p">=</span> <span class="n">Changed</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">handler</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="nf">handler</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">e</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">ConcurrentDictionary</span> <span class="n">Sessions</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">Message</span> <span class="n">message</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">notification</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessageNotification</span>
+        <span class="p">{</span>
+            <span class="n">Message</span> <span class="p">=</span> <span class="n">message</span><span class="p">,</span>
+        <span class="p">};</span>
+
+        <span class="n">Sessions</span><span class="p">.</span><span class="n">Values</span><span class="p">.</span><span class="nf">Notify</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">Extensions</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Notify</span><span class="p">(</span><span class="k">this</span> <span class="n">IEnumerable</span> <span class="n">sessions</span><span class="p">,</span> <span class="n">Notification</span> <span class="n">notification</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">userSession</span> <span class="k">in</span> <span class="n">sessions</span><span class="p">.</span><span class="nf">AsParallel</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">userSession</span><span class="p">.</span><span class="nf">Notify</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">long</span> <span class="nf">ToClientTicks</span><span class="p">(</span><span class="k">this</span> <span class="n">DateTime</span> <span class="n">dateTime</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">dateTime</span><span class="p">.</span><span class="n">Ticks</span> <span class="p">/</span> <span class="m">100</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Web service implementation</h3>
+
+<p>Now let&#39;s see the implementation of the service.</p>
+
+<p>I create a helper method &quot;GetSession&quot; that return a UserSession by a SessionKey.
+The CreateSession method create a SessionKey and an User with a &quot;fake autoinc&quot; id and register it to the ChatEngine.
+The SendMessage method simply calls the SendMessage method of the ChatEngine with a DateTime created on the server side.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">ChatService</span> <span class="p">:</span> <span class="n">IChatService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">UserSession</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">SessionKey</span> <span class="n">key</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">UserSession</span> <span class="n">userSession</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">ChatEngine</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Sessions</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="k">out</span> <span class="n">userSession</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">userSession</span><span class="p">;</span>
+
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">FaultException</span><span class="p">(</span><span class="s">"La session utilisateur n'existe pas"</span><span class="p">,</span> <span class="k">new</span> <span class="nf">FaultCode</span><span class="p">(</span><span class="s">"NoSession"</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">_userAutoIncId</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">CreateSessionResult</span> <span class="nf">CreateSession</span><span class="p">(</span><span class="n">CreateSessionParameter</span> <span class="n">parameter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">userId</span> <span class="p">=</span> <span class="n">Interlocked</span><span class="p">.</span><span class="nf">Increment</span><span class="p">(</span><span class="k">ref</span> <span class="n">_userAutoIncId</span><span class="p">);</span>
+        <span class="n">var</span> <span class="n">key</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SessionKey</span>
+        <span class="p">{</span>
+            <span class="n">User</span> <span class="p">=</span> <span class="k">new</span> <span class="n">User</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">=</span> <span class="n">userId</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="n">parameter</span><span class="p">.</span><span class="n">Name</span> <span class="p">},</span>
+            <span class="n">Id</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">(),</span>
+        <span class="p">};</span>
+        <span class="n">var</span> <span class="n">session</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">UserSession</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+
+        <span class="n">ChatEngine</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Sessions</span><span class="p">.</span><span class="nf">TryAdd</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">session</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="n">CreateSessionResult</span> <span class="p">{</span><span class="n">Key</span> <span class="p">=</span> <span class="n">key</span><span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">SendMessageResult</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">SendMessageParameter</span> <span class="n">parameter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">userSession</span> <span class="p">=</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">SessionKey</span><span class="p">);</span>
+
+        <span class="n">ChatEngine</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="nf">SendMessage</span><span class="p">(</span>
+            <span class="k">new</span> <span class="n">Message</span> <span class="p">{</span> <span class="n">Date</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span> <span class="n">Text</span> <span class="p">=</span> <span class="n">parameter</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">User</span> <span class="p">=</span> <span class="n">userSession</span><span class="p">.</span><span class="n">Key</span><span class="p">.</span><span class="n">User</span> <span class="p">});</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">SendMessageResult</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="c1">//...
+</span><span class="p">}</span>
+</code></pre></div>
+<p>And the main method of the long polling pattern: the GetUpdates method
+The principle is to create an EventWaitHandle object and wait for a timeout (lesser than the client timeout).
+A subscribe to the modification of the UserSession simply stop the EventWaitHandle.</p>
+
+<p>And at the end of the method I return the new notifications and the synchronization time point ticks.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">ChatService</span> <span class="p">:</span> <span class="n">IChatService</span>
+<span class="p">{</span>
+    <span class="c1">//...
+</span>    <span class="k">public</span> <span class="n">GetUpdatesResult</span> <span class="nf">GetUpdates</span><span class="p">(</span><span class="n">GetUpdatesParameter</span> <span class="n">parameter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">userSession</span> <span class="p">=</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">SessionKey</span><span class="p">);</span>
+
+        <span class="n">var</span> <span class="n">timeout</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">15</span><span class="p">);</span>
+
+        <span class="n">var</span> <span class="n">wait</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EventWaitHandle</span><span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="n">EventResetMode</span><span class="p">.</span><span class="n">ManualReset</span><span class="p">);</span>
+
+        <span class="n">EventHandler</span> <span class="n">waiter</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">wait</span><span class="p">.</span><span class="nf">Set</span><span class="p">();</span>
+        <span class="n">userSession</span><span class="p">.</span><span class="n">HasChanged</span> <span class="p">+=</span> <span class="n">waiter</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">userSession</span><span class="p">.</span><span class="nf">HasChanges</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">Ticks</span><span class="p">)</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">wait</span><span class="p">.</span><span class="nf">WaitOne</span><span class="p">(</span><span class="n">timeout</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">userSession</span><span class="p">.</span><span class="n">HasChanged</span> <span class="p">-=</span> <span class="n">waiter</span><span class="p">;</span>
+        <span class="n">var</span> <span class="n">changes</span> <span class="p">=</span> <span class="n">userSession</span><span class="p">.</span><span class="nf">GetUpdates</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">Ticks</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="n">GetUpdatesResult</span>
+                    <span class="p">{</span>
+                        <span class="n">Ticks</span> <span class="p">=</span> <span class="p">(</span><span class="n">changes</span><span class="p">.</span><span class="nf">Any</span><span class="p">()</span> <span class="p">?</span> <span class="n">changes</span><span class="p">.</span><span class="nf">Max</span><span class="p">(</span><span class="n">n</span> <span class="p">=&gt;</span> <span class="n">n</span><span class="p">.</span><span class="n">Date</span><span class="p">).</span><span class="nf">ToClientTicks</span><span class="p">()</span> <span class="p">:</span> <span class="m">0</span><span class="p">),</span>
+                        <span class="n">Messages</span> <span class="p">=</span> <span class="n">changes</span><span class="p">.</span><span class="nf">OfType</span><span class="p">().</span><span class="nf">Select</span><span class="p">(</span><span class="n">n</span> <span class="p">=&gt;</span> <span class="n">n</span><span class="p">.</span><span class="n">Message</span><span class="p">).</span><span class="nf">ToList</span><span class="p">(),</span>
+                    <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2>The Client</h2>
+
+<p>Now let&#39;s see the client part I start with the webservice calls</p>
+
+<h3>Webservice proxy</h3>
+
+<p>No soap here, we have to format data with <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">&quot;convention instead of configuration&quot;</a> mapped on the classes signatures.</p>
+
+<p>The SendMessage and CreateSession are simple xhr calls.
+The GetUpdates has the particularity to be started once with the StartGetUpdate function and relaunch himself when completed.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//namespace Anthyme.LongPollingChat.ChatService</span>
+    <span class="kd">var</span> <span class="nx">Anthyme</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Anthyme</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Anthyme</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">LongPollingChat</span> <span class="o">=</span> <span class="nx">Anthyme</span><span class="p">.</span><span class="nx">LongPollingChat</span> <span class="o">=</span> <span class="nx">Anthyme</span><span class="p">.</span><span class="nx">LongPollingChat</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">ChatService</span> <span class="o">=</span> <span class="nx">LongPollingChat</span><span class="p">.</span><span class="nx">ChatService</span> <span class="o">=</span> <span class="nx">LongPollingChat</span><span class="p">.</span><span class="nx">ChatService</span> <span class="o">||</span> <span class="p">{};</span>
+
+
+    <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">runningUpdates</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">ticks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">genericFailed</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">rep</span><span class="p">)</span> <span class="p">{</span> <span class="kr">debugger</span><span class="p">;</span> <span class="p">};</span>
+
+    <span class="nx">ChatService</span><span class="p">.</span><span class="nx">SendMessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+                <span class="na">contentType</span><span class="p">:</span> <span class="s2">"application/json; charset=utf-8"</span><span class="p">,</span>
+                <span class="na">url</span><span class="p">:</span> <span class="s2">"/ChatService.svc/SendMessage"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="na">parameter</span><span class="p">:</span> <span class="p">{</span> <span class="na">Message</span><span class="p">:</span> <span class="nx">message</span><span class="p">,</span> <span class="na">SessionKey</span><span class="p">:</span> <span class="nx">key</span> <span class="p">}</span>
+                    <span class="p">}),</span>
+                <span class="na">success</span><span class="p">:</span> <span class="nx">callback</span><span class="p">,</span>
+                <span class="na">error</span><span class="p">:</span> <span class="nx">genericFailed</span>
+            <span class="p">}</span>
+        <span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="nx">ChatService</span><span class="p">.</span><span class="nx">CreateSession</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+                <span class="na">contentType</span><span class="p">:</span> <span class="s2">"application/json; charset=utf-8"</span><span class="p">,</span>
+                <span class="na">url</span><span class="p">:</span> <span class="s2">"/ChatService.svc/CreateSession"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span>
+                    <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="na">parameter</span><span class="p">:</span> <span class="p">{</span> <span class="na">Name</span><span class="p">:</span> <span class="nx">name</span> <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">),</span>
+                <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">rep</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">key</span> <span class="o">=</span> <span class="nx">rep</span><span class="p">.</span><span class="nx">CreateSessionResult</span><span class="p">.</span><span class="nx">Key</span><span class="p">;</span>
+                    <span class="nx">callback</span><span class="p">(</span><span class="nx">rep</span><span class="p">.</span><span class="nx">CreateSessionResult</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="na">error</span><span class="p">:</span> <span class="nx">genericFailed</span>
+            <span class="p">}</span>
+        <span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="nx">ChatService</span><span class="p">.</span><span class="nx">StartGetUpdates</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">getUpdates</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">getUpdates</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">runningUpdates</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">runningUpdates</span> <span class="o">=</span>
+                <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+                        <span class="na">contentType</span><span class="p">:</span> <span class="s2">"application/json; charset=utf-8"</span><span class="p">,</span>
+                        <span class="na">url</span><span class="p">:</span> <span class="s2">"/ChatService.svc/GetUpdates"</span><span class="p">,</span>
+                        <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span>
+                            <span class="p">{</span>
+                                <span class="na">parameter</span><span class="p">:</span> <span class="p">{</span> <span class="na">Ticks</span><span class="p">:</span> <span class="nx">ticks</span><span class="p">,</span> <span class="na">SessionKey</span><span class="p">:</span> <span class="nx">key</span> <span class="p">}</span>
+                            <span class="p">}</span>
+                        <span class="p">),</span>
+                        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">rep</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">newTicks</span> <span class="o">=</span> <span class="nx">rep</span><span class="p">.</span><span class="nx">GetUpdatesResult</span><span class="p">.</span><span class="nx">Ticks</span><span class="p">;</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">newTicks</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">ticks</span> <span class="o">=</span> <span class="nx">newTicks</span><span class="p">;</span>
+                            <span class="nx">runningUpdates</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                            <span class="nx">callback</span><span class="p">(</span><span class="nx">rep</span><span class="p">.</span><span class="nx">GetUpdatesResult</span><span class="p">);</span>
+                            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                                <span class="nx">getUpdates</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+                            <span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+                        <span class="p">},</span>
+                        <span class="na">error</span><span class="p">:</span> <span class="nx">genericFailed</span>
+                    <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">);</span>
+</code></pre></div>
+<h3>View</h3>
+
+<p>The view of the chat. Simply a login dialog and chat viewer/input.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"JoinGameDialog"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4&gt;</span>Enter Login :<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"LoginInput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"LoginButton"</span><span class="nt">&gt;</span>Join<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"ChatBox"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;h4</span> <span class="na">id=</span><span class="s">"UserWelcome"</span><span class="nt">&gt;</span>Welcome<span class="nt">&lt;/h4&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"RoomChat"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"MessageInput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;</span>
+ <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"SendButton"</span><span class="nt">&gt;</span>Send<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<h3>View logic code</h3>
+
+<p>The JavaScript associated to our view that map user actions with webservice call and format the data for the display.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">ChatService</span> <span class="o">=</span> <span class="nx">Anthyme</span><span class="p">.</span><span class="nx">LongPollingChat</span><span class="p">.</span><span class="nx">ChatService</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">messageCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">initSession</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ChatService</span><span class="p">.</span><span class="nx">CreateSession</span><span class="p">(</span>
+            <span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">ChatService</span><span class="p">.</span><span class="nx">StartGetUpdates</span><span class="p">(</span><span class="nx">manageUpdates</span><span class="p">);</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#ChatBox"</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#MessageInput"</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+            <span class="p">},</span>
+            <span class="nx">name</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#JoinGameDialog"</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">sendMessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#MessageInput"</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+        <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">ChatService</span><span class="p">.</span><span class="nx">SendMessage</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">rep</span><span class="p">)</span> <span class="p">{},</span> <span class="nx">message</span><span class="p">);</span>
+        <span class="nx">input</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">manageUpdates</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Messages</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">data</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#Messages"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">User</span><span class="p">.</span><span class="nx">Name</span> <span class="o">+</span> <span class="s2">" : "</span> <span class="o">+</span> <span class="nx">message</span><span class="p">.</span><span class="nx">Text</span> <span class="o">+</span> <span class="s2">"&lt;br/&gt;"</span><span class="p">);</span>
+                <span class="nx">messageCount</span><span class="o">++</span><span class="p">;</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#RoomChat"</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="nx">messageCount</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#ChatBox"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#LoginButton"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">userName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#LoginInput'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#UserWelcome'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">userName</span><span class="p">);</span>
+            <span class="nx">initSession</span><span class="p">(</span><span class="nx">userName</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#SendButton"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">sendMessage</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+<span class="p">})(</span><span class="k">this</span><span class="p">)</span>
+</code></pre></div>
+<h2>The result</h2>
+
+<p><img src="https://onedrive.live.com/download?resid=EEE66E4387AB62A!431&amp;authkey=!AGgws62sMAzZO7A&amp;v=3&amp;ithint=photo%2cpng" alt="Long polling chat"></p>
+
+<h2>Final words</h2>
+
+<p>Ok it&#39;s a draft and you can imagine a lot of optimizations and features (disconnection clear the notification collection ...). I have advices for you:</p>
+
+<ol>
+<li><p>Don&#39;t create multiple long polling calls per page (and per user if possible) because it block a call on your webserver and it can be a big problem of thread/memory usage.
+A solution can be a multiplication of data present in the GetUpdatesResult object (like user joining/leaving the chat, everything you need in the page).</p></li>
+<li><p>If you have a complex application, create an event approach
+Rename the GetUpdates method to &quot;GetNotifications&quot; and then publish notifications to the different parts (modules) of your application with an event aggregator (like amplify). These parts can then retreive information they need like a GetMessagesFrom(ticks) for the message part, GetUserJoinFrom(ticks) for the user list part, etc.</p></li>
+<li><p>Websocket: It is a new html 5 technology that allows real pushes to your client. At this moment the technology is not supported in a lot a browser, you should wait a little before using it.</p></li>
+<li><p><a href="https://github.com/SignalR/SignalR">SignalR</a>:
+It is a new framework to push data to your web client. It uses websockect if available else long polling automatically wrapped in the SignalR API.
+It&#39;s not totally stable, nor integrated in the WCF stack (too bad) and you have less control but it&#39;s really really easy to push data to your client with this framework. You should try it.
+I will probably create an article with SignalR if it&#39;s useful (there are already articles on SignalR uses).</p></li>
+</ol>
+
+<p>You can find the source code associated to this article <a href="https://onedrive.live.com/download?resid=EEE66E4387AB62A!432&amp;authkey=!AJi5prVy_w0qVnI&amp;ithint=file%2c7z">here</a></p>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://burnaftercoding.github.io/tags/#WCF" title="Pages tagged WCF" class="tag">WCF</a></span>
+        <span><a href="http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/" rel="bookmark" title="Real time web development with long polling">Real time web development with long polling</a> was published on <span class="entry-date date published updated"><time datetime="2012-06-07T00:27:00+02:00">June 07, 2012</time></span></span>
+        
+        <span class="author vcard"><span class="fn"><a href="http://burnaftercoding.github.io/about/" title="About Anthyme Caillard">Anthyme Caillard</a></span></span>
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+  
+    <div class="read-more-header">
+      <a href="http://burnaftercoding.github.io/post/dotnet-to-javascript-part-2-oop/" class="read-more-btn">Read More</a>
+    </div><!-- /.read-more-header -->
+    <div class="read-more-content">
+      <h3><a href="http://burnaftercoding.github.io/post/software-architect-2014/" title="Software Architect 2014">Software Architect 2014</a></h3>
+      <p>#Software Architect 2014Cette article est un retour sur la conférence Software Architect 2014 @SoftArchConf. Cette conférence s'est dérou...&hellip; <a href="http://burnaftercoding.github.io/post/software-architect-2014/">Continue reading</a></p>
+    </div><!-- /.read-more-content -->
+  
+  <div class="read-more-list">
+    
+      <div class="list-item">
+        <h4><a href="http://burnaftercoding.github.io/post/smart-busy-indicator/" title="Smart busy indicator">Smart busy indicator</a></h4>
+        <span>Published on November 16, 2014</span>
+      </div><!-- /.list-item -->
+    
+      <div class="list-item">
+        <h4><a href="http://burnaftercoding.github.io/post/draw-something-with-html5/" title="Draw something with html5">Draw something with html5</a></h4>
+        <span>Published on June 13, 2012</span>
+      </div><!-- /.list-item -->
+    
+  </div><!-- /.read-more-list -->
+</div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2015 Anthyme Caillard. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://burnaftercoding.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://burnaftercoding.github.io/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56800873-1', 'auto');  
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+
+
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'burnaftercoding'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
+
+</body>
+</html>
