@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://burnaftercoding.github.io/post/smart-busy-indicator/</loc>
+    <loc>http://burnaftercoding.com/post/smart-busy-indicator/</loc>
     <lastmod>2014-02-04T23:50:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/software-architect-2014/</loc>
+    <loc>http://burnaftercoding.com/post/software-architect-2014/</loc>
     <lastmod>2014-02-01T01:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/draw-something-with-html5/</loc>
+    <loc>http://burnaftercoding.com/post/draw-something-with-html5/</loc>
     <lastmod>2012-06-13T18:01:34+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/real-time-web-development-with-long-polling/</loc>
+    <loc>http://burnaftercoding.com/post/real-time-web-development-with-long-polling/</loc>
     <lastmod>2012-06-07T00:27:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/dotnet-to-javascript-part-2-oop/</loc>
+    <loc>http://burnaftercoding.com/post/dotnet-to-javascript-part-2-oop/</loc>
     <lastmod>2012-06-06T21:18:44+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/dotnet-to-javascript-part-1-namespaces/</loc>
+    <loc>http://burnaftercoding.com/post/dotnet-to-javascript-part-1-namespaces/</loc>
     <lastmod>2012-05-23T00:18:44+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/simplified-connection-string-with-entity-framework-edmx-files/</loc>
+    <loc>http://burnaftercoding.com/post/simplified-connection-string-with-entity-framework-edmx-files/</loc>
     <lastmod>2012-03-26T00:18:44+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/access-to-a-collection-outside-of-the-ui-thread-in-wpf4-5/</loc>
+    <loc>http://burnaftercoding.com/post/access-to-a-collection-outside-of-the-ui-thread-in-wpf4-5/</loc>
     <lastmod>2012-03-02T15:55:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/better-graph-loading-in-entity-framework/</loc>
+    <loc>http://burnaftercoding.com/post/better-graph-loading-in-entity-framework/</loc>
     <lastmod>2012-03-01T23:18:44+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/post/asynchronous-validation-with-wpf-4-5/</loc>
+    <loc>http://burnaftercoding.com/post/asynchronous-validation-with-wpf-4-5/</loc>
     <lastmod>2012-03-01T23:18:44+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/404.html</loc>
-    <lastmod>2015-03-01T19:52:19+01:00</lastmod>
+    <loc>http://burnaftercoding.com/404.html</loc>
+    <lastmod>2015-03-01T23:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/posts/</loc>
-    <lastmod>2015-03-01T19:52:19+01:00</lastmod>
+    <loc>http://burnaftercoding.com/posts/</loc>
+    <lastmod>2015-03-01T23:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/</loc>
-    <lastmod>2015-03-01T19:52:19+01:00</lastmod>
+    <loc>http://burnaftercoding.com/</loc>
+    <lastmod>2015-03-01T23:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/tags/</loc>
-    <lastmod>2015-03-01T19:52:19+01:00</lastmod>
+    <loc>http://burnaftercoding.com/tags/</loc>
+    <lastmod>2015-03-01T23:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/about/</loc>
-    <lastmod>2015-03-01T19:52:19+01:00</lastmod>
+    <loc>http://burnaftercoding.com/about/</loc>
+    <lastmod>2015-03-01T23:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.github.io/theme-setup/</loc>
-    <lastmod>2015-03-01T19:52:19+01:00</lastmod>
+    <loc>http://burnaftercoding.com/theme-setup/</loc>
+    <lastmod>2015-03-01T23:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
