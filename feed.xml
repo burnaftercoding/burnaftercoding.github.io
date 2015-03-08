@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://burnaftercoding.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://burnaftercoding.com" />
-<updated>2015-03-02T08:41:33+01:00</updated>
+<updated>2015-03-08T12:06:35+01:00</updated>
 <id>http://burnaftercoding.com/</id>
 <author>
   <name>Anthyme Caillard</name>
@@ -14,11 +14,83 @@
 
 
 <entry>
+  <title type="html"><![CDATA[Software Craftsmanship et Coding Dojo aux Techdays 2015 !]]></title>
+ <link rel="alternate" type="text/html" href="http://burnaftercoding.com/post/software-craftsmanship-coding-dojo-techdays/" />
+  <id>http://burnaftercoding.com/post/software-craftsmanship-coding-dojo-techdays</id>
+  <published>2015-03-07T01:00:00+01:00</published>
+  <updated>2015-03-07T01:00:00+01:00</updated>
+  <author>
+    <name>Anthyme Caillard</name>
+    <uri>http://burnaftercoding.com</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;h1&gt;Software Craftsmanship et Coding Dojo aux Techdays 2015 !&lt;/h1&gt;
+
+&lt;p&gt;Pour la première fois en ces Techdays 2015 nous avons un atelier de type « coding dojo » animé par Bruno Boucard et Jean Laurent De Morlhon, deux software craftsmen expérimentés et reconnus dans leur domaine.&lt;/p&gt;
+
+&lt;p&gt;Pour être plus précis, cette session des Techdays a duré deux heures avec :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;30 minutes de présentation du software craftsmanship &lt;/li&gt;
+&lt;li&gt;1h du coding dojo en question&lt;/li&gt;
+&lt;li&gt;30 minutes de débriefing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Coding dojo ? Kesako ?&lt;/h2&gt;
+
+&lt;p&gt;Le coding dojo est une rencontre de plusieurs personnes dans le but de participer collectivement à un exercice de programmation. Cet exercice est une résolution de problèmes appelé &amp;quot;kata&amp;quot; pour sa ressemblance avec ce que l&amp;#39;on trouve dans l&amp;#39;univers des arts martiaux sur les aspects de l&amp;#39;entrainement et de la répétition.&lt;/p&gt;
+
+&lt;p&gt;Le but est d&amp;#39;apprendre de nouvelles techniques et de partager les compétences avec les autres participants dans un esprit d&amp;#39;amélioration continue en pratiquant à petite dose mais régulièrement.&lt;/p&gt;
+
+&lt;p&gt;Le coding dojo se fait dans l&amp;#39;esprit de l&amp;#39;extreme programming (XP) avec souvent des approches type pair programming et TDD.
+L&amp;#39;approche dojo est à contrebalancer avec les approches de formations classiques.
+Si vous voulez apprendre un art martial vous allez pratiquer pendant 30 minutes / 1 heure toutes les semaines pendant 1 an ou 2 minimum.
+Dans le cadre d&amp;#39;une formation au travail votre employeur va chercher environ une fois par an une formation sur 2/3 jours.
+A votre avis, quelle approche est la plus efficace ? A chacun de juger. ;-)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/software-craftsmanship-coding-dojo-techdays/dojo.jpg&quot; alt=&quot;Dojo&quot; width=&quot;640&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Le coding dojo &amp;quot;Fruit Shop&amp;quot;&lt;/h2&gt;
+
+&lt;p&gt;Le coding dojo proposé est une représentation d&amp;#39;un projet réel concentré en 6 itérations de 10 minutes ayant pour but de créer une caisse enregistreuse pour un vendeur de fruits.
+Les itérations avancent et la complexité du produit final évolue, pas forcément dans le sens que l&amp;#39;on imaginait au début. 
+Ces itérations étaient parfois complètement interrompues par un &amp;quot;commercial&amp;quot; changeant les objectifs et priorités de l&amp;#39;itération mais sans changer la deadline … Comme dans la vraie vie !
+Ce qui est très intéressant dans cette approche c&amp;#39;est que son exécution fait ressortir beaucoup de situations pouvant arriver dans un projet réel comme par exemple :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;La difficulté de gérer le temps et la qualité dans un contexte aux deadlines tendues&lt;/li&gt;
+&lt;li&gt;Avoir essayé d&amp;#39;anticiper le futur et fait de l&amp;#39;over-design&lt;/li&gt;
+&lt;li&gt;A quel point la dette technique peut impacter des itérations futures&lt;/li&gt;
+&lt;li&gt;La difficulté de gérer le refactoring&lt;/li&gt;
+&lt;li&gt;La difficulté à faire du travail en équipe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Cette session découverte était vraiment enrichissante et ce type de méthode d’apprentissage mériterait d&amp;#39;être employé bien plus largement dans les communautés de développeurs.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez trouver les slides du Coding Dojo &lt;a href=&quot;http://fr.slideshare.net/brunoboucard/fruit-shop-techdays-2015&quot;&gt;ici&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Néanmoins ne téléchargez pas les slides juste pour les lire, exécutez plutôt le kata soit seul soit, et de préférence, avec des amis développeurs lors d&amp;#39;un coding dojo. ;-)&lt;/p&gt;
+
+&lt;p&gt;Bruno Boucard et Jean Laurent De Morlhon travaillent aussi dans le coaching et les formations orientés sur la &amp;quot;transformation des développeurs en Software Craftsmen&amp;quot;. Si vous voulez en savoir plus vous pouvez vous rendre sur le site &lt;a href=&quot;http://learn.tocraft.fr/&quot;&gt;Learn to craft&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pour aller plus loin sur les coding dojos je vous encourage à consulter le site &lt;a href=&quot;http://codingdojo.org/&quot;&gt;codingdojo.org&lt;/a&gt; et le site &lt;a href=&quot;http://manifesto.softwarecraftsmanship.org/#/fr-fr&quot;&gt;manifesto.softwarecraftsmanship.org&lt;/a&gt;.
+Et pour les lecteurs je vous conseille ce livre sur le Software Craftmanship : 
+&lt;em&gt;&lt;a href=&quot;http://www.goodreads.com/book/show/18054154-software-craftsmanship&quot;&gt;The Software Craftsman: Professionalism, Pragmatism, Pride&lt;/a&gt;&lt;/em&gt; de Sandro Mancuso.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/software-craftsmanship-coding-dojo-techdays/book.jpg&quot; width=&quot;320&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.com/post/software-craftsmanship-coding-dojo-techdays/&quot;&gt;Software Craftsmanship et Coding Dojo aux Techdays 2015 !&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.com&quot;&gt;Burn after coding&lt;/a&gt; on March 07, 2015.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Smart busy indicator]]></title>
  <link rel="alternate" type="text/html" href="http://burnaftercoding.com/post/smart-busy-indicator/" />
   <id>http://burnaftercoding.com/post/smart-busy-indicator</id>
-  <published>2014-02-04T23:50:00+01:00</published>
-  <updated>2014-02-04T23:50:00+01:00</updated>
+  <published>2015-02-04T23:50:00+01:00</published>
+  <updated>2015-02-04T23:50:00+01:00</updated>
   <author>
     <name>Anthyme Caillard</name>
     <uri>http://burnaftercoding.com</uri>
@@ -146,7 +218,7 @@ In this case you have an application frozen in each load! Users may think that t
 
 &lt;p&gt;Put yourself in the user place! ;-)&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.com/post/smart-busy-indicator/&quot;&gt;Smart busy indicator&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.com&quot;&gt;Burn after coding&lt;/a&gt; on February 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.com/post/smart-busy-indicator/&quot;&gt;Smart busy indicator&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.com&quot;&gt;Burn after coding&lt;/a&gt; on February 04, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -154,8 +226,8 @@ In this case you have an application frozen in each load! Users may think that t
   <title type="html"><![CDATA[Software Architect 2014]]></title>
  <link rel="alternate" type="text/html" href="http://burnaftercoding.com/post/software-architect-2014/" />
   <id>http://burnaftercoding.com/post/software-architect-2014</id>
-  <published>2014-02-01T01:00:00+01:00</published>
-  <updated>2014-02-01T01:00:00+01:00</updated>
+  <published>2015-02-01T01:00:00+01:00</published>
+  <updated>2015-02-01T01:00:00+01:00</updated>
   <author>
     <name>Anthyme Caillard</name>
     <uri>http://burnaftercoding.com</uri>
@@ -163,7 +235,7 @@ In this case you have an application frozen in each load! Users may think that t
   </author>
   <content type="html">&lt;h1&gt;Software Architect 2014&lt;/h1&gt;
 
-&lt;p&gt;Cette article est un retour sur la conférence Software Architect 2014 @SoftArchConf. Cette conférence s&amp;#39;est déroulée du 14 au 17 octobre 2014 dans la charmante ville de Londres et regroupait des intervenants des plus talentueux nous présentant les derniers patterns d&amp;#39;architecture. Nous allons faire le tour des différentes sessions qui ont retenu mon attention.&lt;/p&gt;
+&lt;p&gt;Cet article est un retour sur la conférence Software Architect 2014 @SoftArchConf. Cette conférence s&amp;#39;est déroulée du 14 au 17 octobre 2014 dans la charmante ville de Londres et regroupait des intervenants des plus talentueux nous présentant les derniers patterns d&amp;#39;architecture. Nous allons faire le tour des différentes sessions qui ont retenu mon attention.&lt;/p&gt;
 
 &lt;h2&gt;This is Water&lt;/h2&gt;
 
@@ -600,7 +672,7 @@ On avait 10% d&amp;#39;utilisateur d&amp;#39;UML dans la salle donc on est sur l
 &lt;p&gt;Voilà, c&amp;#39;était mon retour sur la conférence Software Architect 2014. J&amp;#39;espère que vous y avez vu des pistes intéressantes à creuser.
 Vous pouvez retrouver les différentes sessions en vidéo sur le site officiel de la conférence : &lt;a href=&quot;http://software-architect.co.uk/&quot;&gt;http://software-architect.co.uk/&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.com/post/software-architect-2014/&quot;&gt;Software Architect 2014&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.com&quot;&gt;Burn after coding&lt;/a&gt; on February 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.com/post/software-architect-2014/&quot;&gt;Software Architect 2014&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.com&quot;&gt;Burn after coding&lt;/a&gt; on February 01, 2015.&lt;/p&gt;</content>
 </entry>
 
 
