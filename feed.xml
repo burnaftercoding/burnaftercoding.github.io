@@ -4,13 +4,94 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://burnaftercoding.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://burnaftercoding.com" />
-<updated>2015-03-08T12:06:35+01:00</updated>
+<updated>2015-03-20T00:35:16+01:00</updated>
 <id>http://burnaftercoding.com/</id>
 <author>
   <name>Anthyme Caillard</name>
   <uri>http://burnaftercoding.com/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Organisez votre vie avec Trello et GTD]]></title>
+ <link rel="alternate" type="text/html" href="http://burnaftercoding.com/post/trello-gtd/" />
+  <id>http://burnaftercoding.com/post/trello-gtd</id>
+  <published>2015-03-18T01:00:00+01:00</published>
+  <updated>2015-03-18T01:00:00+01:00</updated>
+  <author>
+    <name>Anthyme Caillard</name>
+    <uri>http://burnaftercoding.com</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;h1&gt;Organisez votre vie avec Trello et GTD&lt;/h1&gt;
+
+&lt;p&gt;Un retour d&amp;#39;expérience sur mon usage de méthodologies agiles dans ma vie personnel avec notamment les pratiques GTD et l&amp;#39;outil Trello.&lt;/p&gt;
+
+&lt;h2&gt;Getting Things Done&lt;/h2&gt;
+
+&lt;p&gt;GTD ou &lt;em&gt;Getting Things Done&lt;/em&gt; est une méthode créé par David Allen qui permet d&amp;#39;organiser nos taches avec une approche bien plus élaborée que la classique todo list.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Collecte :&lt;/strong&gt; A chaque instant ou vous pensez à quelque chose &amp;quot;à faire&amp;quot; vous le notez succinctement sur un bout de papier, dans un logiciel de prise de note, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clarification :&lt;/strong&gt; Cette note rapide à besoin d&amp;#39;être précisée déjà pour qu&amp;#39;elle soit plus compréhensible par vous-même par la suite mais aussi pour en déduire des actions à engager.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Organisation :&lt;/strong&gt; Mettre dans un agenda, activer des rappels ou ajouter dans des liste de taches priorisées les éléments à faire.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Revue :&lt;/strong&gt; Une fois par semaine, faire une passe sur les listes de taches pour prioriser/supprimer les tâches qui en ont besoin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Engagement :&lt;/strong&gt; Réaliser les tâches, non pas en réfléchissant à ce que l&amp;#39;on veut ou devrait faire, mais en faisant confiance aux listes qu&amp;#39;on a correctement créées précédemment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Une vidéo présentant GTD et le principe du &amp;quot;singe dans la tête&amp;quot; : &lt;/p&gt;
+
+&lt;iframe width=&quot;1280&quot; height=&quot;750&quot; src=&quot;https://www.youtube.com/embed/Xduzwk04l2E&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+ 
+
+&lt;p&gt;Si vous voullez en savoir plus sur cette méthode, rendez-vous sur le site de &lt;a href=&quot;http://gettingthingsdone.com/&quot;&gt;getting things done&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Trello&lt;/h2&gt;
+
+&lt;p&gt;Trello est un super outil de &amp;quot;gestion de vignettes sur un tableau&amp;quot;. Comme un tableau plein de post-its, il permet de faire vraiment plein de choses comme de la gestion de projet d&amp;#39;une équipe, des taches ménagères, planifier un voyage, organiser l&amp;#39;ameublement de votre domicile et n&amp;#39;importe quel usage que vous pourrsez imaginer. ;-)&lt;/p&gt;
+
+&lt;p&gt;Trello est vraiment très simple d&amp;#39;usage. Vous avez d&amp;#39;abords des &amp;quot;listes&amp;quot; organisées en colonnes qui vous permettent d&amp;#39;agencer un Workflow ou des états. Ensuite vous avez des &amp;quot;cartes&amp;quot; que l&amp;#39;on peut mettre de façon ordonnée dans une liste. Chaque carte peut ensuite être réordonnée dans la liste en question ou déplacée d&amp;#39;une liste à une autre. &lt;/p&gt;
+
+&lt;p&gt;On peut aussi ouvrir une carte et l&amp;#39;enrichir avec une description (que l&amp;#39;on peut écrire en &lt;em&gt;markdown&lt;/em&gt; pour les amateurs), des liens, des images (visibles ou non sur le bord), des listes de cases à cocher, une deadline, un des membres du board, des labels colorés et même un fil de discussion d&amp;#39;échange sur la carte.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez aussi &lt;a href=&quot;http://blog.trello.com/create-cards-via-email/&quot;&gt;créer des cartes par email&lt;/a&gt; ce qui vous permet d&amp;#39;enrichir facilement votre board dans des situations ou vous ne voulez/pouvez pas accéder à Trello.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/trello.png&quot; alt=&quot;trello&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce qui est vraiment puissant avec Trello c&amp;#39;est le fait de pouvoir, en un coup d&amp;#39;œil, avoir une analyse rapide de la situation de ce que votre board représente.&lt;/p&gt;
+
+&lt;p&gt;On trouve aussi des &lt;em&gt;powerups&lt;/em&gt; qui sont des fonctionnalités plus avancées comme par exemple le calendrier permettant de visualiser les cartes sur un calendrier certes, mais aussi d&amp;#39;avoir un accès direct et synchronisé depuis google calendar, ical, etc dans vos applications de calendrier préférées ou sur votre téléphone.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/calendar.png&quot; alt=&quot;calendar&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;On trouve aussi une fonctionnalité de vote et une fonctionnalité de vieillissement des cartes qui leur donne un aspect de plus en plus vieux au fur et à mesure qu&amp;#39;on ne s&amp;#39;occupe pas d&amp;#39;une carte.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/trello-card-aging.png&quot; alt=&quot;card aging&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Maintenant passons aux choses sérieuses avec mon usage de Trello et GTD.&lt;/p&gt;
+
+&lt;h2&gt;Mettre en place GTD avec trello&lt;/h2&gt;
+
+&lt;p&gt;Le GTD s&amp;#39;intègre parfaitement dans Trello, vous pouvez voir ici un instantané de mon board dédié au GTD :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/trello-gtd.png&quot; alt=&quot;trello gtd&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;On retrouve sur mon board ces différentes listes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Categories :&lt;/strong&gt; Il s&amp;#39;agit de la légende de mon board qui donne la signification des libellés vis-à-vis de mes projets (enrichir mon blog, partir au japon) ou de la vie courante (gérer le domicile, les sorties, de l&amp;#39;apprentissage). Ces libellés sont combinables et il y a les cas particulier de &amp;quot;urgent&amp;quot; que je mets sur les cartes urgentes ou delegate que je mets sur les cartes que je délègue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Next actions :&lt;/strong&gt; C&amp;#39;est la liste des prochaines taches à effectuer avec une priorisation pour faire ce qui est en haut d&amp;#39;abord. Le &lt;em&gt;(10)&lt;/em&gt; dans le nom de la liste vient de Kanban et signifie que je ne veux pas avoir plus de 10 éléments dans cette liste (si je dois en rajouter il faut que j&amp;#39;en enlève soit en les supprimant soit en les mettant dans someday). Une fois votre organisation GTD en place votre objectif premier est de vous concentrer à vider cette liste.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wait :&lt;/strong&gt; Celle-ci contient tout ce qui est en attente soit parce que j&amp;#39;ai délégué cette tache soit parce que tout ce qu&amp;#39;il avait à faire a été fait et qu&amp;#39;elle est donc en &amp;quot;suspend&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Someday :&lt;/strong&gt; Ce que j&amp;#39;aimerais bien faire un jour. En théorie il faudrait avoir fini les cartes dans &lt;em&gt;Next actions&lt;/em&gt; avant d&amp;#39;attaquer les cartes dans &lt;em&gt;Some day&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inbox :&lt;/strong&gt; C&amp;#39;est là où j&amp;#39;affecte ma collecte GTD soit en saisissant des cartes manuellement, soit en envoyant un mail via le &lt;a href=&quot;http://blog.trello.com/create-cards-via-email/&quot;&gt;système de création de cartes par email&lt;/a&gt;. J&amp;#39;utilise assez peut se cette Inbox et je préfère utiliser le papier/onenote/un dossier &lt;em&gt;Collect&lt;/em&gt; dans le navigateur.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Done :&lt;/strong&gt; La liste ou je déplace les cartes réalisées (mais pas les annulées !) ce qui me permet de faire la revue en fin de semaine pour voir si j&amp;#39;ai bien avancé. A ce moment-là je supprime tout.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voilà, j&amp;#39;espère que cet article vous aura donné envie d&amp;#39;essayer cette technique, n&amp;#39;hésitez pas à réagir dans les commentaires si vous avez des remarques ou pour partager votre expérience. ;-)&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://burnaftercoding.com/post/trello-gtd/&quot;&gt;Organisez votre vie avec Trello et GTD&lt;/a&gt; was originally published by Anthyme Caillard at &lt;a href=&quot;http://burnaftercoding.com&quot;&gt;Burn after coding&lt;/a&gt; on March 18, 2015.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
