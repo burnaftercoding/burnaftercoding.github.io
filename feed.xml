@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://burnaftercoding.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://burnaftercoding.com" />
-<updated>2015-03-20T00:35:16+01:00</updated>
+<updated>2015-03-21T11:56:09+01:00</updated>
 <id>http://burnaftercoding.com/</id>
 <author>
   <name>Anthyme Caillard</name>
@@ -75,7 +75,9 @@
 
 &lt;p&gt;Le GTD s&amp;#39;intègre parfaitement dans Trello, vous pouvez voir ici un instantané de mon board dédié au GTD :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/trello-gtd.png&quot; alt=&quot;trello gtd&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/trello-gtd.png&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;https://dl.dropboxusercontent.com/u/44389563/blog/code/trello-gtd/trello-gtd.png&quot; alt=&quot;trello gtd&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;On retrouve sur mon board ces différentes listes :&lt;/p&gt;
 
