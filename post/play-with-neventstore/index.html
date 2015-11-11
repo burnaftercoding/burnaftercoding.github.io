@@ -257,8 +257,6 @@ After that I commit and close the first opening of the stream and reopen it agai
 
 <h4>Concurrency handling</h4>
 
-<p>==</p>
-
 <p>Now I test a classic case: 2 clients try to modify a domain model at the same time.
 A correctly implemented Event Sourcing implementation use an optimistic locking technic and should raise an exception for the last one in order to avoid corruption.</p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">var</span> <span class="n">streamId</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">();</span>
@@ -329,8 +327,7 @@ A correctly implemented Event Sourcing implementation use an optimistic locking 
     <span class="n">stream</span><span class="p">.</span><span class="n">CommittedEvents</span><span class="p">.</span><span class="n">Count</span><span class="p">.</span><span class="nf">ShouldBe</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4>Concurrency handling</h4>
-
+<h4>Concurrency handling
 <p>Now I test the concurrency concerns as for the memory store.</p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">var</span> <span class="n">streamId</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">();</span>
 <span class="n">var</span> <span class="n">event1</span> <span class="p">=</span> <span class="n">Event</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">streamId</span><span class="p">,</span> <span class="k">new</span> <span class="nf">SomethingHappened</span><span class="p">(</span><span class="s">"data1"</span><span class="p">));</span>
