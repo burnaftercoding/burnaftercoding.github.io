@@ -142,13 +142,13 @@ Briefly it is a .Net library to store events and potentially implement the Event
 
 <p>Before talking about the usage of <a href="https://github.com/NEventStore/NEventStore">NEventStore</a>, let&#39;s explain the purpose the Event Sourcing.</p>
 
-<p>Usually, applications tend to store and update only le last state of application subjects in order to directly get them back in only one aspect. 
+<p>Usually, applications used to store and update only the last state of application subjects in order to directly get them back in only one aspect. 
 But there are drawbacks to this technique of storing data.
-Firstly you are losing application usage data like for example data added and then removed from a <a href="https://en.wikipedia.org/wiki/Domain_model">domain model</a> are simply lost as products added and removed from a basket.
+Firstly you are losing application usage data. For example data added and removed from a <a href="https://en.wikipedia.org/wiki/Domain_model">domain model</a> is simply lost, as products added and removed from a basket.
 Secondly application <a href="https://en.wikipedia.org/wiki/Domain_model">domain models</a> sometime have really complex structure and are hard to save with transactions in relational databases. </p>
 
 <p>Event sourcing is an alternative technique of data storage by not storing actual state of <a href="https://en.wikipedia.org/wiki/Domain_model">domain models</a> but by storing every <a href="http://martinfowler.com/eaaDev/DomainEvent.html">domain events</a> that happen on the <a href="https://en.wikipedia.org/wiki/Domain_model">domain models</a>. 
-The events are immutable in an <em>append only</em> mode. They are grouped by &quot;stream&quot; identified by a &quot;StreamId&quot; which is the identifier of the <a href="https://en.wikipedia.org/wiki/Domain_model">domain models</a> concerned by the events.</p>
+The events are immutable in an <em>append only</em> mode. They are grouped by &quot;stream&quot; which is identified by a &quot;StreamId&quot; which is, most of the time, the identifier of the <a href="https://en.wikipedia.org/wiki/Domain_model">domain models</a> concerned by the events.</p>
 
 <p>There are a lot of advantages to use this technique. 
 You know everything that append to the <a href="https://en.wikipedia.org/wiki/Domain_model">domain models</a> so you can go back in time to use an old state of the <a href="https://en.wikipedia.org/wiki/Domain_model">domain model</a>. 
@@ -158,12 +158,12 @@ The event sourcing is really well suited for polyglot data and CQRS, allowing yo
 
 <h3>How to implement Event Sourcing?</h3>
 
-<p>When you think about it, Event Sourcing is a pattern and can be implemented (with a little effort) in a lot of existing databases like the classic relational databases.</p>
+<p>When you think about it, Event Sourcing is a pattern and can be implemented (with a small effort) in many existing databases like the classic relational databases.</p>
 
 <p>As the pattern gain in popularity, some of its fans want to create a dedicated database engine optimized for the <em>append only</em> and immutability of storing events. This is how the EventStore database emerged as the fully event oriented database.</p>
 
-<p>So what about the <a href="https://github.com/NEventStore/NEventStore">NEventStore</a> library? It is a unified API that handle the majority of event sourcing scenarios using a lot of existing databases (more than 20). This API has the big advantage to be well and long thought by experimented developer and avoid beginner to make mistakes on the infrastructure stack as they start using Event Sourcing.
-The second cool thing about <a href="https://github.com/NEventStore/NEventStore">NEventStore</a> vs specific databases like <a href="https://geteventstore.com/">EventStore</a> is that you keep the ability to use the existing tools for development, administration, host, backup, ETL, etc. for the database you choose. </p>
+<p>So what about the <a href="https://github.com/NEventStore/NEventStore">NEventStore</a> library? It is a unified API that handle the majority of event sourcing scenarios using many existing databases (more than 20). This API has the big advantage to be well and long thought by experimented developers and avoid beginners to make mistakes on the infrastructure stack as they start using Event Sourcing.
+The second great thing about <a href="https://github.com/NEventStore/NEventStore">NEventStore</a> vs specific databases like <a href="https://geteventstore.com/">EventStore</a> is that you keep the ability to use the existing tools for development, administration, host, backup, ETL, etc. for the database you choose. </p>
 
 <h2>Let&#39;s play with NEventStore!</h2>
 
@@ -215,7 +215,7 @@ The second cool thing about <a href="https://github.com/NEventStore/NEventStore"
 </code></pre></div>
 <h3>In memory database</h3>
 
-<p><a href="https://github.com/NEventStore/NEventStore">NEventStore</a> can connect to a lot of database but it can also create an in memory database. It is really pleasant for Testing!</p>
+<p><a href="https://github.com/NEventStore/NEventStore">NEventStore</a> can connect to many databases but it can also create an in memory database. It is really pleasant for Testing!</p>
 
 <h4>Configuration</h4>
 
@@ -295,7 +295,7 @@ A correctly implemented Event Sourcing implementation use an optimistic locking 
         <span class="p">.</span><span class="nf">Build</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>There are a lot of customizations available like data encryption, log, performance tracking, dispatching … </p>
+<p>There are many customizations available like data encryption, log, performance tracking, dispatching … </p>
 
 <h4>Commits table</h4>
 
@@ -327,8 +327,9 @@ A correctly implemented Event Sourcing implementation use an optimistic locking 
     <span class="n">stream</span><span class="p">.</span><span class="n">CommittedEvents</span><span class="p">.</span><span class="n">Count</span><span class="p">.</span><span class="nf">ShouldBe</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4>Concurrency handling
-<p>Now I test the concurrency concerns as for the memory store.</p>
+<h4>Concurrency handling</h4>
+
+<p>Now I test the concurrency concerns like for the memory store.</p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">var</span> <span class="n">streamId</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">();</span>
 <span class="n">var</span> <span class="n">event1</span> <span class="p">=</span> <span class="n">Event</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">streamId</span><span class="p">,</span> <span class="k">new</span> <span class="nf">SomethingHappened</span><span class="p">(</span><span class="s">"data1"</span><span class="p">));</span>
 <span class="n">var</span> <span class="n">event2</span> <span class="p">=</span> <span class="n">Event</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">streamId</span><span class="p">,</span> <span class="k">new</span> <span class="nf">SomethingHappened</span><span class="p">(</span><span class="s">"data2"</span><span class="p">));</span>
@@ -466,7 +467,7 @@ And again I will reopen the stream with the snapshot and I should get only the 2
 
 <p>Working with Event Sourcing can be tricky at first but as you can see <a href="https://github.com/NEventStore/NEventStore">NEventStore</a> is a really easy to use library and it can help you to start smoothly.
 A memory storage is available in order to simplify testing with the same API.
-You can handle the storage of event and snapshots with a lot of databases from the relational world or even the NoSQL world.</p>
+You can handle the storage of event and snapshots with many databases from the relational world or even the NoSQL world.</p>
 
 <p>You can find the source code on my <a href="https://github.com/anthyme/NEventStoreTests/tree/master/NEventStorePoc">GitHub</a>.</p>
 
