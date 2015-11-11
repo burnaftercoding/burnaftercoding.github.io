@@ -1,104 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://burnaftercoding.com/post/play-with-neventstore/</loc>
+    <lastmod>2015-10-11T01:00:00+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://burnaftercoding.com/post/why-xamarin-strategy-mobile/</loc>
-    <lastmod>2015-06-28T02:00:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2015-06-28T01:00:00+01:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/trello-gtd/</loc>
     <lastmod>2015-03-18T01:00:00+01:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/software-craftsmanship-coding-dojo-techdays/</loc>
-    <lastmod>2015-03-07T01:00:00+01:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2015-03-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/smart-busy-indicator/</loc>
-    <lastmod>2015-02-04T23:50:00+01:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2015-02-04T22:50:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/software-architect-2014/</loc>
-    <lastmod>2015-02-01T01:00:00+01:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2015-02-01T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/draw-something-with-html5/</loc>
-    <lastmod>2012-06-13T18:01:34+02:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-06-13T17:01:34+01:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/real-time-web-development-with-long-polling/</loc>
-    <lastmod>2012-06-07T00:27:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-06-06T23:27:00+01:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/dotnet-to-javascript-part-2-oop/</loc>
-    <lastmod>2012-06-06T21:18:44+02:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-06-06T20:18:44+01:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/dotnet-to-javascript-part-1-namespaces/</loc>
-    <lastmod>2012-05-23T00:18:44+02:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-05-22T23:18:44+01:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/simplified-connection-string-with-entity-framework-edmx-files/</loc>
-    <lastmod>2012-03-26T00:18:44+02:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-03-25T23:18:44+01:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/access-to-a-collection-outside-of-the-ui-thread-in-wpf4-5/</loc>
-    <lastmod>2012-03-02T15:55:00+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://burnaftercoding.com/post/better-graph-loading-in-entity-framework/</loc>
-    <lastmod>2012-03-01T23:18:44+01:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-03-02T14:55:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://burnaftercoding.com/post/asynchronous-validation-with-wpf-4-5/</loc>
-    <lastmod>2012-03-01T23:18:44+01:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2012-03-01T22:18:44+00:00</lastmod>
   </url>
   <url>
-    <loc>http://burnaftercoding.com/404.html</loc>
-    <lastmod>2015-07-01T23:55:26+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>http://burnaftercoding.com/post/better-graph-loading-in-entity-framework/</loc>
+    <lastmod>2012-03-01T22:18:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://burnaftercoding.com/404/</loc>
   </url>
   <url>
     <loc>http://burnaftercoding.com/posts/</loc>
-    <lastmod>2015-07-01T23:55:26+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://burnaftercoding.com/</loc>
-    <lastmod>2015-07-01T23:55:26+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>http://burnaftercoding.com/tags/</loc>
-    <lastmod>2015-07-01T23:55:26+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://burnaftercoding.com/about/</loc>
-    <lastmod>2015-07-01T23:55:26+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>http://burnaftercoding.com/</loc>
   </url>
   <url>
     <loc>http://burnaftercoding.com/theme-setup/</loc>
-    <lastmod>2015-07-01T23:55:26+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>http://burnaftercoding.com/about/</loc>
+  </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/better-graph-loading-in-entity-framework/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/asynchronous-validation-with-wpf-4-5/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/access-to-a-collection-outside-of-the-ui-thread-in-wpf4-5/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/simplified-connection-string-with-entity-framework-edmx-files/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/dotnet-to-javascript-part-1-namespaces/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/dotnet-to-javascript-part-2-oop/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/real-time-web-development-with-long-polling/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/draw-something-with-html5/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/software-architect-2014/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/smart-busy-indicator/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/software-craftsmanship-coding-dojo-techdays/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/trello-gtd/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/why-xamarin-strategy-mobile/</loc>
+    </url>
+    <url>
+      <loc>http://burnaftercoding.com/post/play-with-neventstore/</loc>
+    </url>
 </urlset>

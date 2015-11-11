@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Theme Setup">
 <meta property="og:description" content="Instructions on how to install and customize the modern Jekyll theme HPSTR.">
-<meta property="og:url" content="http://burnaftercoding.com/theme-setup/index.html">
+<meta property="og:url" content="http://burnaftercoding.com/theme-setup/">
 <meta property="og:site_name" content="Burn after coding">
 
 
@@ -125,12 +125,6 @@
       <div class="header-title-wrap">
         <h1 class="entry-title">Theme Setup</h1>
         
-        <p class="entry-reading-time">
-          <i class="fa fa-clock-o"></i>
-          
-          Reading time ~9 minutes
-        </p><!-- /.entry-reading-time -->
-        
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
@@ -162,7 +156,7 @@
 <li>Set the following variables in your <code>config.yml</code> file:</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">title</span><span class="pi">:</span>            <span class="s">Site Title</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">title</span><span class="pi">:</span>            <span class="s">Site Title</span>
 <span class="s">description</span><span class="pi">:</span>      <span class="s">Describe your website here.</span>
 <span class="s">disqus_shortname</span><span class="pi">:</span> <span class="s">shortname</span>
 <span class="c1"># Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)</span>
@@ -201,13 +195,13 @@
 <span class="s">markdown</span><span class="pi">:</span>    <span class="s">kramdown</span>
 
 <span class="c1"># Amount of posts to show on home page</span>
-<span class="s">paginate</span><span class="pi">:</span> <span class="s">5</span></code></pre></div>
+<span class="s">paginate</span><span class="pi">:</span> <span class="s">5</span></code></pre></figure>
 
 <hr>
 
 <h2>Folder Structure</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">hpstr-jekyll-theme/
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">hpstr-jekyll-theme/
 ├── _includes
 |    ├── browser-upgrade.html       <span class="c"># prompt to upgrade browser on &lt; IE8</span>
 |    ├── footer.html                <span class="c"># site footer</span>
@@ -232,7 +226,7 @@
 ├── about/                          <span class="c"># about page</span>
 ├── posts/                          <span class="c"># all posts</span>
 ├── tags/                           <span class="c"># all posts grouped by tag</span>
-└── index.html                      <span class="c"># home page with pagination</span></code></pre></div>
+└── index.html                      <span class="c"># home page with pagination</span></code></pre></figure>
 
 <hr>
 
@@ -244,13 +238,13 @@
 
 <p>Create a <a href="http://disqus.com">Disqus</a> account and change <code>disqus_shortname</code> in <code>_config.yml</code> to the Disqus <em>shortname</em> you just setup. By default comments appear on all post and pages if you assigned a shortname. To disable commenting on a post or page, add the following to its YAML Front Matter:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">comments</span><span class="pi">:</span> <span class="s">false</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">comments</span><span class="pi">:</span> <span class="s">false</span></code></pre></figure>
 
 <h3>Social Share Links</h3>
 
 <p>To enable Facebook, Twitter, and Google+ share links on a post or page, add the following to its front matter:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">share</span><span class="pi">:</span> <span class="s">false</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">share</span><span class="pi">:</span> <span class="s">false</span></code></pre></figure>
 
 <h3>Owner/Author Information</h3>
 
@@ -266,11 +260,11 @@
 
 <p>To add additional links in the drop down menu edit <code>_data/navigation.yml</code>. Use the following format to set the URL and title for as many links as you&#39;d like. <em>External links will open in a new window.</em></p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Portfolio</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Portfolio</span>
   <span class="s">url</span><span class="pi">:</span> <span class="s">/portfolio/</span>
 
 <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Made Mistakes</span>
-  <span class="s">url</span><span class="pi">:</span> <span class="s">http://mademistakes.com</span></code></pre></div>
+  <span class="s">url</span><span class="pi">:</span> <span class="s">http://mademistakes.com</span>  </code></pre></figure>
 
 <hr>
 
@@ -278,23 +272,23 @@
 
 <p>While completely optional, I&#39;ve included Octopress and some starter templates to automate the creation of new posts and pages. To take advantage of it start by installing the <a href="https://github.com/octopress/octopress">Octopress</a> gem if it isn&#39;t already.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>gem install octopress --pre</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>gem install octopress --pre</code></pre></figure>
 
 <h3>New Post</h3>
 
 <p>Default command</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>octopress new post <span class="s2">"Post Title"</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>octopress new post <span class="s2">"Post Title"</span></code></pre></figure>
 
 <p>Default works great if you want all your posts in one directory, but if you&#39;re like me and want to group them into subfolders like <code>/posts</code>, <code>/portfolio</code>, etc. Then this is the command for you. By specifying the DIR it will create a new post in that folder and populate the <code>categories:</code> YAML with the same value.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>octopress new post <span class="s2">"New Post Title"</span> --dir posts</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>octopress new post <span class="s2">"New Post Title"</span> --dir posts</code></pre></figure>
 
 <h3>New Page</h3>
 
 <p>To create a new page use the following command.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>octopress new page new-page/</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>octopress new page new-page/</code></pre></figure>
 
 <hr>
 
@@ -312,16 +306,16 @@
 
 <p>The two layouts make the assumption that the feature images live in the <em>images</em> folder. To add a feature image to a post or page just include the filename in the front matter like so. </p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">image</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">image</span><span class="pi">:</span>
   <span class="s">feature</span><span class="pi">:</span> <span class="s">feature-image-filename.jpg</span>
-  <span class="s">thumb</span><span class="pi">:</span> <span class="s">thumbnail-image.jpg</span> <span class="c1">#keep it square 200x200 px is good</span></code></pre></div>
+  <span class="s">thumb</span><span class="pi">:</span> <span class="s">thumbnail-image.jpg</span> <span class="c1">#keep it square 200x200 px is good</span></code></pre></figure>
 
 <p>If you want to apply attribution to a feature image use the following YAML front matter on posts or pages. Image credits appear directly below the feature image with a link back to the original source.</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">image</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">image</span><span class="pi">:</span>
   <span class="s">feature</span><span class="pi">:</span> <span class="s">feature-image-filename.jpg</span>
   <span class="s">credit</span><span class="pi">:</span> <span class="s">Michael Rose</span> <span class="c1">#name of the person or site you want to credit</span>
-  <span class="s">creditlink</span><span class="pi">:</span> <span class="s">http://mademistakes.com</span> <span class="c1">#url to their site or licensing</span></code></pre></div>
+  <span class="s">creditlink</span><span class="pi">:</span> <span class="s">http://mademistakes.com</span> <span class="c1">#url to their site or licensing</span></code></pre></figure>
 
 <h4>Post/Page Thumbnails for OG and Twitter Cards</h4>
 
@@ -337,7 +331,7 @@
 
 <p>Not sure if this only effects Kramdown or if it&#39;s an issue with Markdown in general. But adding YouTube video embeds causes errors when building your Jekyll site. To fix add a space between the <code>&lt;iframe&gt;</code> tags and remove <code>allowfullscreen</code>. Example below:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"http://www.youtube.com/embed/PWf4WUoMXwg"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;</span> <span class="nt">&lt;/iframe&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"http://www.youtube.com/embed/PWf4WUoMXwg"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;</span> <span class="nt">&lt;/iframe&gt;</span></code></pre></figure>
 
 <h3>Twitter Cards</h3>
 
@@ -357,7 +351,7 @@
 
 <p>To modify the site&#39;s JavaScript files I setup a Grunt build script to lint/concatenate/minify all scripts into <code>scripts.min.js</code>. <a href="http://nodejs.org/">Install Node.js</a>, then <a href="http://gruntjs.com/getting-started">install Grunt</a>, and then finally install the dependencies for the theme contained in <code>package.json</code>:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install</code></pre></figure>
 
 <p>From the theme&#39;s root, use <code>grunt</code> concatenate JavaScript files, and optimize .jpg, .png, and .svg files in the <code>images/</code> folder. You can also use <code>grunt dev</code> in combination with <code>jekyll build --watch</code> to watch for updates JS files that Grunt will then automatically re-build as you write your code which will in turn auto-generate your Jekyll site when developing locally.</p>
 
@@ -383,9 +377,9 @@
         
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://burnaftercoding.com/theme-setup/index.html" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://burnaftercoding.com/theme-setup/index.html" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=http://burnaftercoding.com/theme-setup/index.html" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://burnaftercoding.com/theme-setup/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://burnaftercoding.com/theme-setup/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=http://burnaftercoding.com/theme-setup/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
       </footer>
