@@ -389,7 +389,7 @@ You can send message on this object with the SendMessage method, it simply creat
 
     <span class="k">public</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">Message</span> <span class="n">message</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">notification</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessageNotification</span>
+        <span class="kt">var</span> <span class="n">notification</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessageNotification</span>
         <span class="p">{</span>
             <span class="n">Message</span> <span class="p">=</span> <span class="n">message</span><span class="p">,</span>
         <span class="p">};</span>
@@ -402,7 +402,7 @@ You can send message on this object with the SendMessage method, it simply creat
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Notify</span><span class="p">(</span><span class="k">this</span> <span class="n">IEnumerable</span> <span class="n">sessions</span><span class="p">,</span> <span class="n">Notification</span> <span class="n">notification</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">userSession</span> <span class="k">in</span> <span class="n">sessions</span><span class="p">.</span><span class="nf">AsParallel</span><span class="p">())</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">userSession</span> <span class="k">in</span> <span class="n">sessions</span><span class="p">.</span><span class="nf">AsParallel</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="n">userSession</span><span class="p">.</span><span class="nf">Notify</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
         <span class="p">}</span>
@@ -436,13 +436,13 @@ The SendMessage method simply calls the SendMessage method of the ChatEngine wit
     <span class="k">private</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">_userAutoIncId</span><span class="p">;</span>
     <span class="k">public</span> <span class="n">CreateSessionResult</span> <span class="nf">CreateSession</span><span class="p">(</span><span class="n">CreateSessionParameter</span> <span class="n">parameter</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">userId</span> <span class="p">=</span> <span class="n">Interlocked</span><span class="p">.</span><span class="nf">Increment</span><span class="p">(</span><span class="k">ref</span> <span class="n">_userAutoIncId</span><span class="p">);</span>
-        <span class="n">var</span> <span class="n">key</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SessionKey</span>
+        <span class="kt">var</span> <span class="n">userId</span> <span class="p">=</span> <span class="n">Interlocked</span><span class="p">.</span><span class="nf">Increment</span><span class="p">(</span><span class="k">ref</span> <span class="n">_userAutoIncId</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">key</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SessionKey</span>
         <span class="p">{</span>
             <span class="n">User</span> <span class="p">=</span> <span class="k">new</span> <span class="n">User</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">=</span> <span class="n">userId</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="n">parameter</span><span class="p">.</span><span class="n">Name</span> <span class="p">},</span>
             <span class="n">Id</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">(),</span>
         <span class="p">};</span>
-        <span class="n">var</span> <span class="n">session</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">UserSession</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">session</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">UserSession</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
 
         <span class="n">ChatEngine</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Sessions</span><span class="p">.</span><span class="nf">TryAdd</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">session</span><span class="p">);</span>
 
@@ -451,7 +451,7 @@ The SendMessage method simply calls the SendMessage method of the ChatEngine wit
 
     <span class="k">public</span> <span class="n">SendMessageResult</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">SendMessageParameter</span> <span class="n">parameter</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">userSession</span> <span class="p">=</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">SessionKey</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">userSession</span> <span class="p">=</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">SessionKey</span><span class="p">);</span>
 
         <span class="n">ChatEngine</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="nf">SendMessage</span><span class="p">(</span>
             <span class="k">new</span> <span class="n">Message</span> <span class="p">{</span> <span class="n">Date</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span> <span class="n">Text</span> <span class="p">=</span> <span class="n">parameter</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">User</span> <span class="p">=</span> <span class="n">userSession</span><span class="p">.</span><span class="n">Key</span><span class="p">.</span><span class="n">User</span> <span class="p">});</span>
@@ -471,11 +471,11 @@ A subscribe to the modification of the UserSession simply stop the EventWaitHand
     <span class="c1">//...
 </span>    <span class="k">public</span> <span class="n">GetUpdatesResult</span> <span class="nf">GetUpdates</span><span class="p">(</span><span class="n">GetUpdatesParameter</span> <span class="n">parameter</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">userSession</span> <span class="p">=</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">SessionKey</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">userSession</span> <span class="p">=</span> <span class="nf">GetSession</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">SessionKey</span><span class="p">);</span>
 
-        <span class="n">var</span> <span class="n">timeout</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">15</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">timeout</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">15</span><span class="p">);</span>
 
-        <span class="n">var</span> <span class="n">wait</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EventWaitHandle</span><span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="n">EventResetMode</span><span class="p">.</span><span class="n">ManualReset</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">wait</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EventWaitHandle</span><span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="n">EventResetMode</span><span class="p">.</span><span class="n">ManualReset</span><span class="p">);</span>
 
         <span class="n">EventHandler</span> <span class="n">waiter</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">wait</span><span class="p">.</span><span class="nf">Set</span><span class="p">();</span>
         <span class="n">userSession</span><span class="p">.</span><span class="n">HasChanged</span> <span class="p">+=</span> <span class="n">waiter</span><span class="p">;</span>
@@ -486,7 +486,7 @@ A subscribe to the modification of the UserSession simply stop the EventWaitHand
         <span class="p">}</span>
 
         <span class="n">userSession</span><span class="p">.</span><span class="n">HasChanged</span> <span class="p">-=</span> <span class="n">waiter</span><span class="p">;</span>
-        <span class="n">var</span> <span class="n">changes</span> <span class="p">=</span> <span class="n">userSession</span><span class="p">.</span><span class="nf">GetUpdates</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">Ticks</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">changes</span> <span class="p">=</span> <span class="n">userSession</span><span class="p">.</span><span class="nf">GetUpdates</span><span class="p">(</span><span class="n">parameter</span><span class="p">.</span><span class="n">Ticks</span><span class="p">);</span>
 
         <span class="k">return</span> <span class="k">new</span> <span class="n">GetUpdatesResult</span>
                     <span class="p">{</span>
@@ -698,20 +698,20 @@ I will probably create an article with SignalR if it&#39;s useful (there are alr
       <a href="http://burnaftercoding.com/post/dotnet-to-javascript-part-2-oop/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="http://burnaftercoding.com/post/play-with-neventstore/" title="Play with NEventStore">Play with NEventStore</a></h3>
-      <p>#Play with NEventStore Today I am going to play with the [NEventStore][NEventStore] library and share some code and feelings about it.Bri...&hellip; <a href="http://burnaftercoding.com/post/play-with-neventstore/">Continue reading</a></p>
+      <h3><a href="http://burnaftercoding.com/post/retour-socrates-2016/" title="Retour Socrates France 2016">Retour Socrates France 2016</a></h3>
+      <p># Retour Socrates France 2016 Ayant eu le plaisir de participer à l’édition 2016 de Socrates FR, je vais vous raconter le déroulement de ...&hellip; <a href="http://burnaftercoding.com/post/retour-socrates-2016/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="http://burnaftercoding.com/post/why-xamarin-strategy-mobile/" title="Pourquoi choisir Xamarin pour votre stratégie mobile">Pourquoi choisir Xamarin pour votre stratégie mobile</a></h4>
-        <span>Published on June 28, 2015</span>
+        <h4><a href="http://burnaftercoding.com/post/play-with-neventstore/" title="Play with NEventStore">Play with NEventStore</a></h4>
+        <span>Published on October 11, 2015</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="http://burnaftercoding.com/post/trello-gtd/" title="Organisez votre vie avec Trello et GTD">Organisez votre vie avec Trello et GTD</a></h4>
-        <span>Published on March 18, 2015</span>
+        <h4><a href="http://burnaftercoding.com/post/why-xamarin-strategy-mobile/" title="Pourquoi choisir Xamarin pour votre stratégie mobile">Pourquoi choisir Xamarin pour votre stratégie mobile</a></h4>
+        <span>Published on June 28, 2015</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -721,7 +721,7 @@ I will probably create an article with SignalR if it&#39;s useful (there are alr
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
-    <span>&copy; 2015 Anthyme Caillard. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+    <span>&copy; 2016 Anthyme Caillard. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
   </footer>
 </div><!-- /.footer-wrapper -->
 

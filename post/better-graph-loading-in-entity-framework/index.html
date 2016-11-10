@@ -154,9 +154,9 @@
         <span class="n">_articleRepository</span> <span class="p">=</span> <span class="n">articleRepository</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="n">async</span> <span class="n">Task</span> <span class="nf">HandleAsync</span><span class="p">(</span><span class="n">ArticleDownloaded</span> <span class="n">domainEvent</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">HandleAsync</span><span class="p">(</span><span class="n">ArticleDownloaded</span> <span class="n">domainEvent</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">article</span> <span class="p">=</span> <span class="n">await</span> <span class="n">_readabilityService</span><span class="p">.</span><span class="nf">GetArticleAsync</span><span class="p">(</span><span class="n">domainEvent</span><span class="p">.</span><span class="n">ArticleId</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">article</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_readabilityService</span><span class="p">.</span><span class="nf">GetArticleAsync</span><span class="p">(</span><span class="n">domainEvent</span><span class="p">.</span><span class="n">ArticleId</span><span class="p">);</span>
         <span class="n">article</span><span class="p">.</span><span class="n">Row</span><span class="p">.</span><span class="n">TypedId</span> <span class="p">=</span> <span class="n">domainEvent</span><span class="p">.</span><span class="n">LocalId</span><span class="p">;</span>
         <span class="n">article</span><span class="p">.</span><span class="n">Row</span><span class="p">.</span><span class="n">DownloadedAt</span> <span class="p">=</span> <span class="n">domainEvent</span><span class="p">.</span><span class="n">Date</span><span class="p">;</span>
         <span class="n">_articleRepository</span><span class="p">.</span><span class="nf">Persist</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="n">Row</span><span class="p">);</span>
@@ -210,14 +210,14 @@ Here, we have an one-to-many relation between Subject and Category and another o
 <p>The lazy loading is activated when you naturaly navigate into reference properties and collections.</p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">static</span> <span class="k">void</span> <span class="nf">Lazy</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">using</span> <span class="p">(</span><span class="n">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GraphContext</span><span class="p">())</span>
+    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GraphContext</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">subjects</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Subjects</span><span class="p">.</span><span class="nf">Take</span><span class="p">(</span><span class="n">fetchSize</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
-        <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">subject</span> <span class="k">in</span> <span class="n">subjects</span><span class="p">)</span>
+        <span class="kt">var</span> <span class="n">subjects</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Subjects</span><span class="p">.</span><span class="nf">Take</span><span class="p">(</span><span class="n">fetchSize</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">subject</span> <span class="k">in</span> <span class="n">subjects</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">category</span> <span class="k">in</span> <span class="n">subject</span><span class="p">.</span><span class="n">Categories</span><span class="p">)</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">category</span> <span class="k">in</span> <span class="n">subject</span><span class="p">.</span><span class="n">Categories</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">subCategory</span> <span class="k">in</span> <span class="n">category</span><span class="p">.</span><span class="n">SubCategories</span><span class="p">)</span>
+                <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">subCategory</span> <span class="k">in</span> <span class="n">category</span><span class="p">.</span><span class="n">SubCategories</span><span class="p">)</span>
                 <span class="p">{</span>
                 <span class="p">}</span>
             <span class="p">}</span>
@@ -240,9 +240,9 @@ Here, we have an one-to-many relation between Subject and Category and another o
 <p>The include technique allow you to fetch relational data in one shot, reducing the number of trips to the database.</p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">static</span> <span class="k">void</span> <span class="nf">Include</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">using</span> <span class="p">(</span><span class="n">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GraphContext</span><span class="p">())</span>
+    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GraphContext</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">var</span> <span class="n">subjects</span> <span class="p">=</span>  <span class="n">context</span><span class="p">.</span><span class="n">Subjects</span>
+        <span class="kt">var</span> <span class="n">subjects</span> <span class="p">=</span>  <span class="n">context</span><span class="p">.</span><span class="n">Subjects</span>
             <span class="p">.</span><span class="nf">Include</span><span class="p">(</span><span class="s">"Categories.SubCategories"</span><span class="p">)</span>
             <span class="p">.</span><span class="nf">Take</span><span class="p">(</span><span class="n">fetchSize</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
     <span class="p">}</span>
@@ -268,37 +268,37 @@ Indeed it should be use only on many-to-one relations (that avoid this type of j
 (Note that I deactivate the lazy-loading because of the lines that cast to EntityCollection. You don&#39;t need to do this if you use EntityObject for your models)</p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">static</span> <span class="k">void</span> <span class="nf">MultiQuery</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">using</span> <span class="p">(</span><span class="n">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GraphContext</span><span class="p">())</span>
+    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GraphContext</span><span class="p">())</span>
     <span class="p">{</span>
         <span class="n">context</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">LazyLoadingEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
-        <span class="n">var</span> <span class="n">subjects</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Subjects</span><span class="p">.</span><span class="nf">Take</span><span class="p">(</span><span class="n">fetchSize</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
-        <span class="n">var</span> <span class="n">subjectsIds</span> <span class="p">=</span> <span class="n">subjects</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Id</span><span class="p">).</span><span class="nf">ToArray</span><span class="p">();</span>
+        <span class="kt">var</span> <span class="n">subjects</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Subjects</span><span class="p">.</span><span class="nf">Take</span><span class="p">(</span><span class="n">fetchSize</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
+        <span class="kt">var</span> <span class="n">subjectsIds</span> <span class="p">=</span> <span class="n">subjects</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Id</span><span class="p">).</span><span class="nf">ToArray</span><span class="p">();</span>
 
-        <span class="n">var</span> <span class="n">categories</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Categories</span>
+        <span class="kt">var</span> <span class="n">categories</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Categories</span>
                 <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">subjectsIds</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Subject</span><span class="p">.</span><span class="n">Id</span><span class="p">))</span>
                 <span class="p">.</span><span class="nf">ToList</span><span class="p">();</span>
 
-        <span class="n">var</span> <span class="n">categorieIds</span> <span class="p">=</span> <span class="n">categories</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Id</span><span class="p">).</span><span class="nf">ToArray</span><span class="p">();</span>
+        <span class="kt">var</span> <span class="n">categorieIds</span> <span class="p">=</span> <span class="n">categories</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Id</span><span class="p">).</span><span class="nf">ToArray</span><span class="p">();</span>
 
-        <span class="n">var</span> <span class="n">subCategories</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">SubCategories</span>
+        <span class="kt">var</span> <span class="n">subCategories</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">SubCategories</span>
             <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">categorieIds</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Category</span><span class="p">.</span><span class="n">Id</span><span class="p">))</span>
             <span class="p">.</span><span class="nf">ToList</span><span class="p">();</span>
 
-        <span class="n">var</span> <span class="n">categoriesDict</span> <span class="p">=</span> <span class="n">categories</span><span class="p">.</span><span class="nf">GroupBy</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Subject</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span>
+        <span class="kt">var</span> <span class="n">categoriesDict</span> <span class="p">=</span> <span class="n">categories</span><span class="p">.</span><span class="nf">GroupBy</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Subject</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span>
             <span class="p">.</span><span class="nf">ToDictionary</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span> <span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="nf">ToList</span><span class="p">());</span>
-        <span class="n">var</span> <span class="n">subCategoriesDict</span> <span class="p">=</span> <span class="n">subCategories</span><span class="p">.</span><span class="nf">GroupBy</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Category</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span>
+        <span class="kt">var</span> <span class="n">subCategoriesDict</span> <span class="p">=</span> <span class="n">subCategories</span><span class="p">.</span><span class="nf">GroupBy</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Category</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span>
             <span class="p">.</span><span class="nf">ToDictionary</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span> <span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="nf">ToList</span><span class="p">());</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">subject</span> <span class="k">in</span> <span class="n">subjects</span><span class="p">)</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">subject</span> <span class="k">in</span> <span class="n">subjects</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">var</span> <span class="n">categoriesCollection</span> <span class="p">=</span> 
+            <span class="kt">var</span> <span class="n">categoriesCollection</span> <span class="p">=</span> 
                 <span class="p">(</span><span class="n">EntityCollection</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">&gt;)</span><span class="n">subject</span><span class="p">.</span><span class="n">Categories</span><span class="p">;</span>
             <span class="n">categoriesCollection</span><span class="p">.</span><span class="nf">Attach</span><span class="p">(</span><span class="n">categoriesDict</span><span class="p">[</span><span class="n">subject</span><span class="p">.</span><span class="n">Id</span><span class="p">]);</span>
         <span class="p">}</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">category</span> <span class="k">in</span> <span class="n">categories</span><span class="p">)</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">category</span> <span class="k">in</span> <span class="n">categories</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">var</span> <span class="n">subCategoriesCollection</span> <span class="p">=</span> 
+            <span class="kt">var</span> <span class="n">subCategoriesCollection</span> <span class="p">=</span> 
                 <span class="p">(</span><span class="n">EntityCollection</span><span class="p">&lt;</span><span class="n">SubCategory</span><span class="p">&gt;)</span><span class="n">category</span><span class="p">.</span><span class="n">SubCategories</span><span class="p">;</span>
             <span class="n">subCategoriesCollection</span><span class="p">.</span><span class="nf">Attach</span><span class="p">(</span>
                 <span class="n">subCategoriesDict</span><span class="p">[</span><span class="n">category</span><span class="p">.</span><span class="n">Id</span><span class="p">]);</span>
@@ -349,20 +349,20 @@ But now let see the results in a benchmark with one and multiples subjects:</p>
       <a href="http://burnaftercoding.com" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="http://burnaftercoding.com/post/play-with-neventstore/" title="Play with NEventStore">Play with NEventStore</a></h3>
-      <p>#Play with NEventStore Today I am going to play with the [NEventStore][NEventStore] library and share some code and feelings about it.Bri...&hellip; <a href="http://burnaftercoding.com/post/play-with-neventstore/">Continue reading</a></p>
+      <h3><a href="http://burnaftercoding.com/post/retour-socrates-2016/" title="Retour Socrates France 2016">Retour Socrates France 2016</a></h3>
+      <p># Retour Socrates France 2016 Ayant eu le plaisir de participer à l’édition 2016 de Socrates FR, je vais vous raconter le déroulement de ...&hellip; <a href="http://burnaftercoding.com/post/retour-socrates-2016/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="http://burnaftercoding.com/post/why-xamarin-strategy-mobile/" title="Pourquoi choisir Xamarin pour votre stratégie mobile">Pourquoi choisir Xamarin pour votre stratégie mobile</a></h4>
-        <span>Published on June 28, 2015</span>
+        <h4><a href="http://burnaftercoding.com/post/play-with-neventstore/" title="Play with NEventStore">Play with NEventStore</a></h4>
+        <span>Published on October 11, 2015</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="http://burnaftercoding.com/post/trello-gtd/" title="Organisez votre vie avec Trello et GTD">Organisez votre vie avec Trello et GTD</a></h4>
-        <span>Published on March 18, 2015</span>
+        <h4><a href="http://burnaftercoding.com/post/why-xamarin-strategy-mobile/" title="Pourquoi choisir Xamarin pour votre stratégie mobile">Pourquoi choisir Xamarin pour votre stratégie mobile</a></h4>
+        <span>Published on June 28, 2015</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -372,7 +372,7 @@ But now let see the results in a benchmark with one and multiples subjects:</p>
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
-    <span>&copy; 2015 Anthyme Caillard. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+    <span>&copy; 2016 Anthyme Caillard. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
   </footer>
 </div><!-- /.footer-wrapper -->
 
